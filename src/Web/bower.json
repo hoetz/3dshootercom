@@ -1,0 +1,25 @@
+{
+  "name": "3dshooterWeb",
+  "version": "0.0.1",
+  "authors": [
+    "Florian Hoetzinger <florian.hoetzinger@gab-net.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "2.1.4"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}

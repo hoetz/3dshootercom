@@ -1,0 +1,12 @@
+bin/
+.swp
+secret.json
+.vs
+obj
+*.suo
+*.kproj.user
+*.ide
+*.d.ts
+bower_components
+node_modules
+.settings/
