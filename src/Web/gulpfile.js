@@ -33,10 +33,11 @@ gulp.task('BootstrapFontCss', function () {
     .pipe(gulp.dest(config.rootFolder+'/fonts'));
 
     gulp.src(['bower_components/bootstrap/dist/css/*.min.css','Content/stylesheets/*.css'])
+    .pipe(concat('styles.css'))
     .pipe(gulp.dest(config.rootFolder+'/css'));
 });
 
 gulp.task('watch', function () {
     //gulp.start('aspnet-run');
-    gulp.watch([config.src,config.templates], ['scripts','templates']);
+    gulp.watch([config.src], ['scripts']);
 });
