@@ -1,6 +1,4 @@
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
@@ -8,7 +6,7 @@ using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
 using System;
 
-namespace HelloMvc
+namespace Web
 {
     public class Startup
     {
