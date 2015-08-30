@@ -27,7 +27,7 @@ public class HomeTests
     {
         featuredArticlesQuery.Get().Returns(Task.FromResult(articles));
         ViewResult result= sut.Index() as ViewResult;
-        
+
         var model=result.ViewData.Model as FrontPageModel;
         articles.ShouldDeepEqual(model.Articles);
     }

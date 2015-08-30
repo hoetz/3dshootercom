@@ -10,11 +10,11 @@ namespace Web.Controllers
 
         public HomeController(IFeaturedArticlesQuery articlesQuery)
         {
-            this.articlesQuery=articlesQuery;
+            this.articlesQuery = articlesQuery;
         }
         public IActionResult Index()
         {
-            var articles=this.articlesQuery.Get().Result.OrderBy(x=>x.Position);
+            var articles = this.articlesQuery.Get().Result;
             FrontPageModel model = new FrontPageModel(articles);
             return View(model);
         }
