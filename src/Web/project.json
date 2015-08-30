@@ -19,7 +19,7 @@
 		"Microsoft.Framework.Logging": "1.0.0-beta6",
 		"Microsoft.Framework.Logging.Console": "1.0.0-beta6",
         "Microsoft.Framework.Runtime.Abstractions":"1.0.0-beta6",
-        "Microsoft.AspNet.Mvc.TagHelpers":"1.0.0-beta6"
+    "Microsoft.AspNet.Mvc.TagHelpers": "1.0.0-beta6"
 	},
 
 	 "frameworks": {

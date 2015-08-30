@@ -16,7 +16,14 @@ namespace Web
         {
             // Setup configuration sources.
             var ConfigurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
-                                .AddJsonFile("secret.json");
+
+#if DEBUG
+          .AddJsonFile("secret.json")
+#else
+          .AddEnvironmentVariables();
+#endif
+          ;
+
             this.Configuration=ConfigurationBuilder.Build();
 
         }
