@@ -14,7 +14,7 @@ namespace Web.Controllers
         }
         public IActionResult Index()
         {
-            var articles = this.articlesQuery.Get().Result;
+            var articles = this.articlesQuery.Get().Result.OrderBy(x => x.Position);
             FrontPageModel model = new FrontPageModel(articles);
             return View(model);
         }
