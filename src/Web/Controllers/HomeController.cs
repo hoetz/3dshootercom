@@ -1,13 +1,15 @@
 using Microsoft.AspNet.Mvc;
 using System.Dynamic;
+using System.Collections.Generic;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public IActionResult Index()
         {
-            dynamic model = new ExpandoObject();
+            List<Article> model = new List<Article>();
+            model.Add(new Article("sdsd","image.jpg"));
             return View(model);
         }
     }
