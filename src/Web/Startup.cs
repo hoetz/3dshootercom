@@ -5,6 +5,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
 using System;
+using Web.Domain;
 
 namespace Web
 {
@@ -23,6 +24,8 @@ namespace Web
 
         public void ConfigureServices(IServiceCollection services)
         {
+              services.AddScoped<IFeaturedArticlesQuery>((x) 
+                  => new FeaturedArticlesQuery(Configuration.Get("AzureConString")));
             services.AddMvc();
         }
 

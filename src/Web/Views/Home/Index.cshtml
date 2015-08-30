@@ -1,47 +1,20 @@
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@model FrontPageModel
 @{
     Layout = "/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Home Page";
 }
 <div class="container">
   <div class="row">
+    @foreach (var article in Model.Articles)
+   {
     <div class="col-md-3 splash">
-      <p><img src="/images/wolfenstein.jpg"></p>
-      <p>28.05.2014</p>
-      <p>Wolfenstein ist 2014 eine schizophrene Schießballade, die erfolgreich gängige Genre-Mechaniken über Bord wirft um ein
-        technisch solides, oft auch groteskes, aber stets kurzweiliges Programm zu inszenieren. Schizophren deshalb, da man
-        abseits der überzogenen Nazi-Eliminierung nicht selten sehr abrupt in ruhige, emotionale Sequenzen überführt, die in
-        scharfem Kontrast zum sonstigen Spielverlauf stehen. Das ist im Ansatz gut, wird aber leider erst gegen Ende des Spiels
-        zunehmend interessant und sollte in einem möglichen Sequel durchaus ausgebaut werden. Wirklich ärgerlich ist die Tatsache,
-        dass man nach einem durchweg gelungenen Spiel nicht den Mut hatte das DLC-kompatible Finale gegen einen echten Schlussstrich
-        zu tauschen. -fh</p>
+      <p><img src="@string.Format("dist/app/images/{0}",article.ImageSrc)"></p>
+      <p>@article.Date</p>
+      <p>@article.Text</p>
     </div>
-    <div class="col-md-3 splash">
-      <p><img src="/images/thelastfederation.jpg"></p>
-      <p>14.05.2014</p>
-      <p>Die Globalstrategie im All ist seit jeher ein beliebtes Sujet der Indie Szene. The Last Federation kombiniert in dieser
-        Variante die strategische Bühne einer zufälligen Sternenkarte mit stressfreien, weil pausierbaren, taktischen Echtzeitkämpfen.
-        Gesteuert wird hier lediglich ein einzelner raumfahrender Agent, dessen Ziel die Vereinigung aller angetroffenen Spezies
-        in die namensgebende Föderation ist. Die Vielzahl an simulierten Parametern macht das interplanetare Einmischen zu einer
-        unterhaltsamen aber auch anstrengenden Angelegenheit und das trotz einer sehr guten Einführung. The Last Federation
-        funktioniert besonders für den intriganten galaktischen Strippenzieher, der sich mit komplexen Systemen anfreunden kann
-        und keinen Wert auf eine bombastische Präsentation legt. -fh</p>
-    </div>
-    <div class="col-md-3 splash">
-      <p><img src="/images/hotlinemiami.jpg"></p>
-      <p>27.04.2014</p>
-      <p>Hotline Miami ist ein perfekter traumwandlerischer Mördersimulator mit Pixel Vibe und einer legendären elektronischen
-        Klangkulisse. Das ist alles. -fh</p>
-    </div>
-    <div class="col-md-3 splash">
-      <p><img src="/images/monaco.jpg"></p>
-      <p>27.04.2014</p>
-      <p>Wenn es Monaco nicht gäbe, müsste man es erfinden. Ein Top-Down Arcade Schleicher mit überdrehter Optik und gnadenlos
-        effektivem Online Teamwork. Andy Schatz hat es fertiggebracht, die gängigen Diebestricks in einen lockerleichten Indie
-        Titel zu verpacken, der seinen Mehrwert nicht nur durch die grundverschiedenen Pixel-Einbrecher bringt, sondern überraschenderweise
-        das Gefühl eines großen Bankraubs besser transportiert als so manches millionenschwere Konkurrenzprodukt. Jeder auch
-        nur im Ansatz aufkommende Frust löst sich durch die turbulente aber weitgehend freundliche Gemeinde globaler Komplizen
-        schnell in Wohlgefallen auf und motiviert dann auch noch das letzte Goldstück aus dem Tresor zu ergaunern. -fh</p>
-    </div>
+   }
+    
   </div>
   <div class="row">
     <div id="disqus_thread"></div>

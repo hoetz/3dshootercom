@@ -767,6 +767,23 @@
           "lib/dnx451/Microsoft.AspNet.Mvc.Razor.Host.dll": {}
         }
       },
+      "Microsoft.AspNet.Mvc.TagHelpers/6.0.0-beta1": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta1"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/aspnet50/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/aspnet50/Microsoft.AspNet.Mvc.TagHelpers.dll": {}
+        }
+      },
       "Microsoft.AspNet.Mvc.ViewFeatures/6.0.0-beta6": {
         "dependencies": {
           "Microsoft.AspNet.Antiforgery": "1.0.0-beta6",
@@ -2580,6 +2597,18 @@
         "Microsoft.AspNet.Mvc.Razor.Host.6.0.0-beta6.nupkg.sha512",
         "Microsoft.AspNet.Mvc.Razor.Host.nuspec",
         "repo.json"
+      ]
+    },
+    "Microsoft.AspNet.Mvc.TagHelpers/6.0.0-beta1": {
+      "sha512": "dbVd3KXbictKTwh4keGVNTVN8Ydg8NfrunBm1aAeMs2j2Q5lAe3Xc86CTVBOyz6ukobXGlG7N7JFg5FfiPF13g==",
+      "files": [
+        "lib/aspnet50/Microsoft.AspNet.Mvc.TagHelpers.dll",
+        "lib/aspnet50/Microsoft.AspNet.Mvc.TagHelpers.xml",
+        "lib/aspnetcore50/Microsoft.AspNet.Mvc.TagHelpers.dll",
+        "lib/aspnetcore50/Microsoft.AspNet.Mvc.TagHelpers.xml",
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta1.nupkg",
+        "Microsoft.AspNet.Mvc.TagHelpers.6.0.0-beta1.nupkg.sha512",
+        "Microsoft.AspNet.Mvc.TagHelpers.nuspec"
       ]
     },
     "Microsoft.AspNet.Mvc.ViewFeatures/6.0.0-beta6": {
