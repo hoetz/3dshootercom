@@ -12,9 +12,13 @@ public class HomeTests
 {
     [Theory]
     [AutoDomainData]
-    public async Task Index_OnGet_ReturnsFrontPageModel(HomeController sut)
+    public async Task Index_OnGet_ReturnsFrontPageModel(
+    FrontPageModel model,
+    [Frozen]IFrontPageService service,
+    HomeController sut)
     {
-        IActionResult viewResult= await sut.Index();
+        service.GetFrontPageModelAsync().Returns(Task.FromResult(model));
+        IActionResult viewResult = await sut.Index();
         Assert.True((viewResult as ViewResult).ViewData.Model is FrontPageModel);
     }
 
@@ -26,9 +30,9 @@ public class HomeTests
         HomeController sut)
     {
         service.GetFrontPageModelAsync().Returns(Task.FromResult(new FrontPageModel(articles)));
-        ViewResult result= await sut.Index() as ViewResult;
+        ViewResult result = await sut.Index() as ViewResult;
 
-        var model=result.ViewData.Model as FrontPageModel;
+        var model = result.ViewData.Model as FrontPageModel;
         articles.ShouldDeepEqual(model.Articles);
     }
 }
