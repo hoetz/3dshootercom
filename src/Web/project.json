@@ -1,5 +1,5 @@
 {
-	"description": "Web",
+	"description": "WebPortal",
 	"version": "1.0.0-*",
 	"webroot": "wwwroot",
   "dependencies": {

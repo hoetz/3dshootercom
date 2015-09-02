@@ -1,21 +1,21 @@
 using Microsoft.AspNet.Mvc;
 using System.Linq;
 using Web.Domain;
+using System.Threading.Tasks;
 
 namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IFeaturedArticlesQuery articlesQuery;
+        private readonly IFrontPageService service;
 
-        public HomeController(IFeaturedArticlesQuery articlesQuery)
+        public HomeController(IFrontPageService service)
         {
-            this.articlesQuery = articlesQuery;
+            this.service = service;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var articles = this.articlesQuery.Get().Result.OrderBy(x => x.Position);
-            FrontPageModel model = new FrontPageModel(articles);
+            var model = await this.service.GetFrontPageModelAsync();
             return View(model);
         }
     }

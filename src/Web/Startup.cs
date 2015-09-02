@@ -31,8 +31,9 @@ namespace Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-              services.AddScoped<IFeaturedArticlesQuery>((x) 
+              services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.Get("AzureConString")));
+            services.AddScoped<IFrontPageService, FrontPageService>();
             services.AddMvc();
         }
 
