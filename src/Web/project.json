@@ -3,7 +3,7 @@
 	"version": "1.0.0-*",
 	"webroot": "wwwroot",
   "dependencies": {
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7",
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta7",
     "Microsoft.AspNet.Hosting": "1.0.0-beta7",
     "Microsoft.AspNet.Identity": "3.0.0-beta7",
@@ -12,7 +12,6 @@
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
     "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
     "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
-    "Microsoft.Azure.Documents.Client": "0.9.2-preview",
     "Microsoft.Framework.Configuration": "1.0.0-beta7",
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta7",
     "Microsoft.Framework.Logging": "1.0.0-beta7",
