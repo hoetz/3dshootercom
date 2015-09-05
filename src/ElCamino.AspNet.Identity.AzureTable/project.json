@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0-beta2",
+    "name": "ElCamino.AspNet.Identity.AzureTable",
+    "title": "Azure Table Storage Provider for ASP.NET Identity",
+    "description": "Azure Table Storage Provider for ASP.NET Identity 2.0 and 3.0 (beta4) frameworks for ASP.NET 5 dnx and dnx core.",
+    "authors": [ "David Melendez" ],
+    "tags": [ "ASP.NET", "Identity 2.0", "Identity 3.0", "Azure", "Table Storage", "MVC", "UserStore", "RoleStore", "UserManager", "multi-tenant", "RA-GRS", "geo-redundant", "Microsoft.AspNet.Identity" ],
+    "projectUrl": "https://identityazuretable.codeplex.com",
+    "licenseUrl": "https://identityazuretable.codeplex.com/license",
+    "owners": [ "David Melendez" ],
+    "copyright": "Copyright �  2015 David Melendez, MIT License",
+    "requireLicenseAcceptance": true,
+    "releaseNotes": "Beta release primarily to support Identity 3.0 Beta6 for ASP.NET 5 dnx and dnx core.",
+
+    "dependencies": {
+        "Newtonsoft.Json": "7.0.1"
+    },
+    "frameworks": {
+       
+        "dnx451": {
+            "dependencies": {
+                "Microsoft.AspNet.Identity": "3.0.0-beta7",
+                "Microsoft.Framework.DependencyInjection": "1.0.0-beta7",
+                "WindowsAzure.Storage": "5.0.1",
+                "Microsoft.Framework.Configuration.Abstractions" : "1.0.0-beta7"
+
+            },
+            "compilationOptions": { "define": [ "dnx451" ] }
+        }
+    }
+}

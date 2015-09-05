@@ -7,6 +7,7 @@
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta7",
     "Microsoft.AspNet.Hosting": "1.0.0-beta7",
     "Microsoft.AspNet.Identity": "3.0.0-beta7",
+    "Microsoft.Framework.DependencyInjection": "1.0.0-beta7",
     "Microsoft.AspNet.Mvc": "6.0.0-beta7",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta7",
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
@@ -18,7 +19,8 @@
     "Microsoft.Framework.Logging.Console": "1.0.0-beta7",
     "Microsoft.Framework.OptionsModel": "1.0.0-beta7",
     "Microsoft.Dnx.Runtime.Abstractions": "1.0.0-beta7",
-    "WindowsAzure.Storage": "4.4.1-*",
+    "WindowsAzure.Storage": "5.0.1",
+    "ElCamino.AspNet.Identity.AzureTable":"2.0.0-beta2",
     "System.Reflection.Metadata":"1.0.23-beta-23225"
   },
 
