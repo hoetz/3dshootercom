@@ -1,7 +1,6 @@
 using System.Linq;
 using Web.Domain;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 public interface IFrontPageService
 {
