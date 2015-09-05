@@ -3,7 +3,7 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using Microsoft.Dnx.Runtime;
+using Microsoft.Framework.Runtime;
 using System;
 using Web.Domain;
 
@@ -32,7 +32,7 @@ namespace Web
         public void ConfigureServices(IServiceCollection services)
         {
               services.AddScoped<IFeaturedArticlesQuery>((x)
-                  => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));
+                  => new FeaturedArticlesQuery(Configuration.Get("AzureConString")));
             services.AddScoped<IFrontPageService, FrontPageService>();
             services.AddMvc();
         }
