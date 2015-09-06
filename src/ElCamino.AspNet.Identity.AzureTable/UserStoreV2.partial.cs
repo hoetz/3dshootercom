@@ -1281,10 +1281,13 @@ namespace ElCamino.AspNet.Identity.AzureTable
 			{
 				throw new ArgumentNullException("user");
 			}
-			return Task.FromResult(user.Id.ToString());
+            if (user.Id != null)
+                return Task.FromResult(user.Id.ToString());
+            else
+                return Task.FromResult("");
 		}
 
-		public virtual Task<string> GetUserNameAsync(TUser user, CancellationToken cancellationToken = default(CancellationToken))
+        public virtual Task<string> GetUserNameAsync(TUser user, CancellationToken cancellationToken = default(CancellationToken))
 		{
 			cancellationToken.ThrowIfCancellationRequested();
 			ThrowIfDisposed();
