@@ -22,14 +22,17 @@ namespace Microsoft.AspNet.Identity
             Type userStoreType = typeof(UserStore<,,>).MakeGenericType(userType, roleType, contextType);
             Type roleStoreType = typeof(RoleStore<,>).MakeGenericType(roleType, contextType);
 
-            ServiceDescriptor sdUserStore = new ServiceDescriptor(typeof(IUserStore<>).MakeGenericType(userType),
+
+            var services = new ServiceCollection();
+            services.AddScoped(
+                typeof(IUserStore<>).MakeGenericType(userType),
                 userStoreType);
-            ServiceDescriptor sdroleStore = new ServiceDescriptor(typeof(IRoleStore<>).MakeGenericType(roleType),
-            roleStoreType);
-
-            return new ServiceDescriptor[] { sdUserStore, sdroleStore };
-
+            services.AddScoped(
+                typeof(IRoleStore<>).MakeGenericType(roleType),
+                roleStoreType);
+            return services;
         }
+
     }
 }
 #endif

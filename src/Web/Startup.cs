@@ -52,9 +52,8 @@ namespace Web
                     };
                 }))
                 .AddDefaultTokenProviders();
-                
-                services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
-                services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
+
+  
             
             services.AddMvc();
         }
