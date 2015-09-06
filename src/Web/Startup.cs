@@ -6,9 +6,13 @@ using Microsoft.Framework.Logging;
 using Microsoft.Dnx.Runtime;
 using System;
 using Web.Domain;
+using ElCamino.AspNet.Identity.AzureTable.Model;
+using ElCamino.AspNet.Identity.AzureTable;
+using Microsoft.AspNet.Identity;
 
 namespace Web
 {
+    
     public class Startup
     {
 
@@ -34,6 +38,24 @@ namespace Web
               services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));
             services.AddScoped<IFrontPageService, FrontPageService>();
+            
+            // Add Identity services to the services container.
+            services.AddIdentity<ApplicationUser, IdentityRole>((config) =>
+            {
+                
+            })
+                //.AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddAzureTableStores<IdentityCloudContext>(new Func<IdentityConfiguration>(() =>
+                {
+                    return new IdentityConfiguration() {
+                        StorageConnectionString = Configuration.GetSection("AzureConString").Value
+                    };
+                }))
+                .AddDefaultTokenProviders();
+                
+                services.AddScoped<SignInManager<ApplicationUser>, SignInManager<ApplicationUser>>();
+                services.AddScoped<UserManager<ApplicationUser>, UserManager<ApplicationUser>>();
+            
             services.AddMvc();
         }
 
