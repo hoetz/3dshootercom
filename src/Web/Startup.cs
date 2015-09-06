@@ -48,7 +48,7 @@ namespace Web
                 .AddAzureTableStores<IdentityCloudContext>(new Func<IdentityConfiguration>(() =>
                 {
                     return new IdentityConfiguration() {
-                        StorageConnectionString = Configuration.GetSection("AzureConString").Value
+                        StorageConnectionString = Configuration.GetSection("AzureConString").Value,
                     };
                 }))
                 .AddDefaultTokenProviders();
