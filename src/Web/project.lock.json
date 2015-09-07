@@ -933,15 +933,6 @@
           "lib/dnx451/Microsoft.AspNet.WebUtilities.dll": {}
         }
       },
-      "Microsoft.Azure.KeyVault.Core/1.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.Azure.KeyVault.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.Azure.KeyVault.Core.dll": {}
-        }
-      },
       "Microsoft.CodeAnalysis.Analyzers/1.1.0-beta1-20150812-01": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1827,24 +1818,31 @@
           "lib/net45/_._": {}
         }
       },
-      "WindowsAzure.Storage/5.0.2": {
+      "WindowsAzure.Storage/5.0.3-preview": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Azure.KeyVault.Core": "1.0.0",
           "Microsoft.Data.OData": "5.6.4",
           "Microsoft.Data.Services.Client": "5.6.4",
-          "Newtonsoft.Json": "6.0.8"
+          "System.Spatial": "5.6.4"
         },
         "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core",
           "System.Data",
+          "System.Data.DataSetExtensions",
+          "System.Net.Http",
+          "System.Runtime",
+          "System.Runtime.Serialization.Xml",
           "System.Xml",
           "System.Xml.Linq"
         ],
         "compile": {
-          "lib/net40/Microsoft.WindowsAzure.Storage.dll": {}
+          "lib/dnx451/Microsoft.WindowsAzure.Storage.dll": {}
         },
         "runtime": {
-          "lib/net40/Microsoft.WindowsAzure.Storage.dll": {}
+          "lib/dnx451/Microsoft.WindowsAzure.Storage.dll": {}
         }
       }
     }
@@ -2564,19 +2562,6 @@
         "Microsoft.AspNet.WebUtilities.1.0.0-beta7.nupkg.sha512",
         "Microsoft.AspNet.WebUtilities.nuspec",
         "repo.json"
-      ]
-    },
-    "Microsoft.Azure.KeyVault.Core/1.0.0": {
-      "type": "package",
-      "sha512": "iaA0E8xoVlqroQ7Iurg/VyAjfPdhzn+xN7JkdncmNoox/ez49uPbxp2vMrvhopBaUMuoBu38+8e0RvrV+X+BxA==",
-      "files": [
-        "lib/net40/Microsoft.Azure.KeyVault.Core.dll",
-        "lib/net40/Microsoft.Azure.KeyVault.Core.xml",
-        "lib/portable-net45+wp8+wpa81+win/Microsoft.Azure.KeyVault.Core.dll",
-        "lib/portable-net45+wp8+wpa81+win/Microsoft.Azure.KeyVault.Core.xml",
-        "Microsoft.Azure.KeyVault.Core.1.0.0.nupkg",
-        "Microsoft.Azure.KeyVault.Core.1.0.0.nupkg.sha512",
-        "Microsoft.Azure.KeyVault.Core.nuspec"
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0-beta1-20150812-01": {
@@ -4003,12 +3988,18 @@
         "System.Threading.nuspec"
       ]
     },
-    "WindowsAzure.Storage/5.0.2": {
+    "WindowsAzure.Storage/5.0.3-preview": {
       "type": "package",
-      "sha512": "j8EJ1Quw3v1J79/+LQcr0IfZWfsEioI7F5g1kzkYxXN2Uf3EQQNchqvObkAK3zrX9kkuX1+C0FNWPgb7QcArvA==",
+      "sha512": "X2VrTtloPFTP1l67jc7dRTaAE6DENQkJMR3/PzebhlzK6ZrTxjZthpB+3KaXQWzdCRIfYADfCvp+odQ4mEdaqw==",
       "files": [
+        "lib/dnx451/Microsoft.WindowsAzure.Storage.dll",
+        "lib/dnx451/Microsoft.WindowsAzure.Storage.xml",
+        "lib/dnxcore50/Microsoft.WindowsAzure.Storage.dll",
+        "lib/dnxcore50/Microsoft.WindowsAzure.Storage.xml",
         "lib/net40/Microsoft.WindowsAzure.Storage.dll",
         "lib/net40/Microsoft.WindowsAzure.Storage.xml",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1/Microsoft.WindowsAzure.Storage.dll",
+        "lib/portable-net45+netcore45+wpa81+MonoAndroid1+MonoTouch1/Microsoft.WindowsAzure.Storage.xml",
         "lib/win8/Microsoft.WindowsAzure.Storage.dll",
         "lib/win8/Microsoft.WindowsAzure.Storage.xml",
         "lib/wp8/Microsoft.WindowsAzure.Storage.dll",
@@ -4016,8 +4007,8 @@
         "lib/wpa/Microsoft.WindowsAzure.Storage.dll",
         "lib/wpa/Microsoft.WindowsAzure.Storage.xml",
         "nuget.exe",
-        "WindowsAzure.Storage.5.0.2.nupkg",
-        "WindowsAzure.Storage.5.0.2.nupkg.sha512",
+        "WindowsAzure.Storage.5.0.3-preview.nupkg",
+        "WindowsAzure.Storage.5.0.3-preview.nupkg.sha512",
         "WindowsAzure.Storage.nuspec"
       ]
     }
@@ -4040,7 +4031,7 @@
       "Microsoft.Framework.Logging.Console >= 1.0.0-beta7",
       "Microsoft.Framework.OptionsModel >= 1.0.0-beta7",
       "Microsoft.Dnx.Runtime.Abstractions >= 1.0.0-beta7",
-      "WindowsAzure.Storage >= 5.0.2",
+      "WindowsAzure.Storage >= 5.0.3-preview",
       "ElCamino.AspNet.Identity.AzureTable >= 2.0.0-beta2",
       "System.Reflection.Metadata >= 1.0.23-beta-23225"
     ],

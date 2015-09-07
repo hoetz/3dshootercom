@@ -24,7 +24,7 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
                 .Take(1);
 
         var table = this.GetTableReference(this._CloudTableClient, this._TableName);
-        TableQuerySegment<DynamicTableEntity> querySegment = null;
+        TableQuerySegment querySegment = null;
         var returnList = new List<DynamicTableEntity>();
         while (querySegment == null || querySegment.ContinuationToken != null)
         {
