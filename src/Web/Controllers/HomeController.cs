@@ -1,6 +1,4 @@
 using Microsoft.AspNet.Mvc;
-using System.Linq;
-using Web.Domain;
 using System.Threading.Tasks;
 
 namespace Web.Controllers

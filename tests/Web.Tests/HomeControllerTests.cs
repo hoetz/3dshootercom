@@ -2,7 +2,6 @@ using Web.Controllers;
 using Microsoft.AspNet.Mvc;
 using Xunit;
 using Ploeh.AutoFixture.Xunit2;
-using Web.Domain;
 using NSubstitute;
 using System.Collections.Generic;
 using DeepEqual.Syntax;
