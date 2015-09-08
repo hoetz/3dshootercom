@@ -1,3 +1,2 @@
 [config]
 project = src/Web
-command = mydeploy.cmd
