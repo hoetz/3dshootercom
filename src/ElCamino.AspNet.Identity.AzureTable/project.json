@@ -21,7 +21,7 @@
             "dependencies": {
                 "Microsoft.AspNet.Identity": "3.0.0-beta7",
                 "Microsoft.Framework.DependencyInjection": "1.0.0-beta7",
-                "WindowsAzure.Storage": "5.0.1",
+                "WindowsAzure.Storage": "5.0.3-preview",
                 "Microsoft.Framework.Configuration.Abstractions" : "1.0.0-beta7"
 
             },

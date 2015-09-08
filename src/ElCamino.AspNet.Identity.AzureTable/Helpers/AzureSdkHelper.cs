@@ -14,7 +14,7 @@ namespace Microsoft.WindowsAzure.Storage.Table
 			var task = ct.ExecuteQuerySegmentedAsync(tq, new TableContinuationToken());
 			
 			task.Wait();
-			TableQuerySegment<DynamicTableEntity> segment = task.Result;
+			TableQuerySegment segment = task.Result;
 			TableContinuationToken t = segment.ContinuationToken;
 
 			if (t == null)
