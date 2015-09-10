@@ -6,6 +6,7 @@ var config = {
     //Include all js files but exclude any min.js files
     src: [
             'bower_components/jquery/dist/jquery.js',
+            'bower_components/jquery-validation/dist/jquery.validate.min.js',
             'bower_components/handlebars/handlebars.js',
             'bower_components/bootstrap/dist/js/bootstrap.js',
             'scripts/*.js',
