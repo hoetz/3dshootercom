@@ -8,11 +8,10 @@ using System;
 using Web.Domain;
 using ElCamino.AspNet.Identity.AzureTable.Model;
 using ElCamino.AspNet.Identity.AzureTable;
-using Microsoft.AspNet.Identity;
 
 namespace Web
 {
-    
+
     public class Startup
     {
 

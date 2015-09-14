@@ -1,8 +1,6 @@
 ﻿// MIT License Copyright 2014 (c) David Melendez. All rights reserved. See License.txt in the project root for license information.
 #if !net45
-using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Microsoft.WindowsAzure.Storage.Table
 {

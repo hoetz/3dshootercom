@@ -3,17 +3,13 @@
 using Microsoft.WindowsAzure.Storage;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections.Concurrent;
 using Microsoft.AspNet.Identity;
 using Microsoft.WindowsAzure.Storage.Table;
-using Model = ElCamino.AspNet.Identity.AzureTable.Model;
 using ElCamino.AspNet.Identity.AzureTable.Helpers;
 using System.Threading;
 
