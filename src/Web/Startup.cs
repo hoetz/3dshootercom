@@ -18,14 +18,18 @@ namespace Web
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            var ConfigurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
-
-#if DEBUG
-          .AddJsonFile("secret.json")
-#else
-          .AddEnvironmentVariables();
-#endif
-          ;
+            var ConfigurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath);
+            
+            if(env.IsDevelopment())
+            {
+                ConfigurationBuilder
+                    .AddJsonFile("secret.json");
+            }
+            else
+            {
+                ConfigurationBuilder
+                    .AddEnvironmentVariables();
+            }
 
             this.Configuration=ConfigurationBuilder.Build();
 

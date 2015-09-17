@@ -27,7 +27,7 @@
         "dnx451": { }
     },
 	 "commands": {
-        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5001",
-         "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --server.urls http://localhost:5004"
+        "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --ASPNET_ENV development --server.urls http://localhost:5001",
+         "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --ASPNET_ENV development --server.urls http://localhost:5004"
     }
 }
