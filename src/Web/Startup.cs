@@ -18,14 +18,19 @@ namespace Web
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            var ConfigurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
 
-#if DEBUG
-          .AddJsonFile("secret.json")
-#else
-          .AddEnvironmentVariables();
-#endif
-          ;
+            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath);
+            
+            if(env.IsDevelopment())
+            {
+                ConfigurationBuilder
+                    .AddJsonFile("secret.json");
+            }
+            else
+            {
+                ConfigurationBuilder
+                    .AddEnvironmentVariables();
+            }
 
             this.Configuration=ConfigurationBuilder.Build();
 
@@ -65,13 +70,13 @@ namespace Web
             // Add the following to the request pipeline only in development environment.
             if (string.Equals(env.EnvironmentName, "Development", StringComparison.OrdinalIgnoreCase))
             {
-                app.UseErrorPage();
+                app.UseDeveloperExceptionPage();
             }
             else
             {
                 // Add Error handling middleware which catches all application specific errors and
                 // send the request to the following path or controller action.
-                app.UseErrorHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error");
             }
 
             // Add static files to the request pipeline.
