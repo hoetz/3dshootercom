@@ -18,7 +18,7 @@ namespace Web
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            var ConfigurationBuilder = new ConfigurationBuilder(appEnv.ApplicationBasePath).SetBasePath(appEnv.ApplicationBasePath);
+            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath);
 
             if (env.IsDevelopment())
             {
