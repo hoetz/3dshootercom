@@ -25,6 +25,15 @@ public class AccountController : Controller
         ViewBag.ReturnUrl = returnUrl;
         return View();
     }
+    
+    [HttpPostAttribute]
+    [ValidateAntiForgeryTokenAttribute]
+    public async Task<IActionResult> LogOff()
+    {
+        await SignInManager.SignOutAsync(); 
+        return RedirectToAction("Index", "Home"); 
+
+    }
 
     //
     // POST: /Account/Login
