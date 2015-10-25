@@ -5,7 +5,9 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Mvc.ModelBinding;
 using Microsoft.AspNet.Routing;
+using Microsoft.AspNet.Mvc.Abstractions;
 using Ploeh.AutoFixture.AutoNSubstitute;
+using Microsoft.AspNet.Mvc.ViewFeatures;
 
 public class AutoDomainDataAttribute : AutoDataAttribute
     {
