@@ -6,9 +6,7 @@ using System.Data.Services.Common;
 
 namespace ElCamino.AspNet.Identity.AzureTable.Model
 {
-    #if DNX451
 	[DataServiceKey("PartitionKey", "RowKey")]
-    #endif
     public class IdentityRole : IdentityRole<string, IdentityUserRole>, IGenerateKeys
     {
         public IdentityRole() : base() { }
