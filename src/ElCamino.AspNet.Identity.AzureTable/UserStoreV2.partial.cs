@@ -621,7 +621,7 @@ namespace ElCamino.AspNet.Identity.AzureTable
 #if DEBUG
 			DateTime startUserAggTotal = DateTime.UtcNow;
 #endif
-#if !dnxcore50
+#if DNX451
 			Parallel.ForEach(listTqs, (q) =>
 			{
 				Parallel.ForEach(_userTable.ExecuteQuery(q)
