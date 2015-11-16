@@ -11,3 +11,4 @@ bower_components
 node_modules
 .settings/
 Properties
+*.lock.json
