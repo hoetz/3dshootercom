@@ -2,8 +2,8 @@
 
 #if !net45
 using System;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using ElCamino.AspNet.Identity.AzureTable;
 using System.Collections.Generic;
 

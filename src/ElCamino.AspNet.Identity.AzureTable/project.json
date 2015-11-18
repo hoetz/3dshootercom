@@ -14,10 +14,10 @@
 
     "dependencies": {
         "Newtonsoft.Json": "7.0.1",
-         "Microsoft.AspNet.Identity": "3.0.0-beta8",
-                "Microsoft.Framework.DependencyInjection": "1.0.0-beta8",
+         "Microsoft.AspNet.Identity": "3.0.0-rc1",
+                "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1",
                 "WindowsAzure.Storage": "6.1.1-preview",
-                "Microsoft.Framework.Configuration.Abstractions" : "1.0.0-beta8"
+                "Microsoft.Extensions.Configuration.Abstractions" : "1.0.0-rc1"
     },
     "frameworks": {
         "dnx451": { },

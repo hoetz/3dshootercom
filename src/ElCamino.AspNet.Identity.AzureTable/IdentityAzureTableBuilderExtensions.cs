@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity;
 using ElCamino.AspNet.Identity.AzureTable;
 using ElCamino.AspNet.Identity.AzureTable.Model;
 
-namespace Microsoft.Framework.DependencyInjection
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IdentityAzureTableBuilderExtensions
     {
