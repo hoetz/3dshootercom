@@ -8,6 +8,7 @@ using System;
 using Web.Domain;
 using ElCamino.AspNet.Identity.AzureTable.Model;
 using ElCamino.AspNet.Identity.AzureTable;
+using System.IO;
 
 namespace Web
 {
@@ -17,10 +18,11 @@ namespace Web
 
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
+            
             // Setup configuration sources.
             var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath);
 
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() && File.Exists(Path.Combine(appEnv.ApplicationBasePath,"secret.json")))
             {
                 ConfigurationBuilder
                     .AddJsonFile("secret.json");
