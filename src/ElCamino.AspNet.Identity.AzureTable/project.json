@@ -3,27 +3,43 @@
     "name": "ElCamino.AspNet.Identity.AzureTable",
     "title": "Azure Table Storage Provider for ASP.NET Identity",
     "description": "Azure Table Storage Provider for ASP.NET Identity 2.0 and 3.0 (beta4) frameworks for ASP.NET 5 dnx and dnx core.",
-    "authors": [ "David Melendez" ],
-    "tags": [ "ASP.NET", "Identity 2.0", "Identity 3.0", "Azure", "Table Storage", "MVC", "UserStore", "RoleStore", "UserManager", "multi-tenant", "RA-GRS", "geo-redundant", "Microsoft.AspNet.Identity" ],
+    "authors": [
+        "David Melendez"
+    ],
+    "tags": [
+        "ASP.NET",
+        "Identity 2.0",
+        "Identity 3.0",
+        "Azure",
+        "Table Storage",
+        "MVC",
+        "UserStore",
+        "RoleStore",
+        "UserManager",
+        "multi-tenant",
+        "RA-GRS",
+        "geo-redundant",
+        "Microsoft.AspNet.Identity"
+    ],
     "projectUrl": "https://identityazuretable.codeplex.com",
     "licenseUrl": "https://identityazuretable.codeplex.com/license",
-    "owners": [ "David Melendez" ],
+    "owners": [
+        "David Melendez"
+    ],
     "copyright": "Copyright �  2015 David Melendez, MIT License",
     "requireLicenseAcceptance": true,
     "releaseNotes": "Beta release primarily to support Identity 3.0 Beta6 for ASP.NET 5 dnx and dnx core.",
-
     "dependencies": {
         "Newtonsoft.Json": "7.0.1",
-         "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
-                "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
-                "WindowsAzure.Storage": "6.1.1-preview",
-                "Microsoft.Extensions.Configuration.Abstractions" : "1.0.0-rc1-final"
+        "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
+        "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
+        "WindowsAzure.Storage": "6.1.1-preview",
+        "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
     },
     "frameworks": {
-        "dnx451": { },
+        "dnx451": {},
         "dnxcore50": {
-            "dependencies": {
-            }
-         }
+            "dependencies": {}
+        }
     }
 }

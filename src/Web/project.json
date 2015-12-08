@@ -1,35 +1,33 @@
 {
-	"description": "WebPortal",
-	"version": "1.0.0-*",
-	"webroot": "wwwroot",
-  "dependencies": {
-    "ElCamino.AspNet.Identity.AzureTable": "2.0.0-beta2",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
-    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-rc1-final",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
-    "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
-    "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final",
-    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
-    "WindowsAzure.Storage": "6.1.1-preview"
-  },
-
-	 "frameworks": {
-        "dnx451": { },
-        "dnxcore50": {
-            "dependencies": {
-            }
-         }
+    "description": "WebPortal",
+    "version": "1.0.0-*",
+    "webroot": "wwwroot",
+    "dependencies": {
+        "ElCamino.AspNet.Identity.AzureTable": "2.0.0-beta2",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",
+        "Microsoft.AspNet.Hosting": "1.0.0-rc1-final",
+        "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
+        "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+        "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
+        "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-rc1-final",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
+        "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
+        "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
+        "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final",
+        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final",
+        "WindowsAzure.Storage": "6.1.1-preview"
     },
-	 "commands": {
+    "frameworks": {
+        "dnx451": {},
+        "dnxcore50": {
+            "dependencies": {}
+        }
+    },
+    "commands": {
         "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --ASPNET_ENV development --server.urls http://localhost:5001"
     }
 }
