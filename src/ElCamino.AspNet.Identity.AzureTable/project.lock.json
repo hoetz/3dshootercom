@@ -10851,7 +10851,7 @@
     },
     "WindowsAzure.Storage/6.1.1-preview": {
       "type": "package",
-      "sha512": "mDSDuW0GcVYsV1jILYz2nvMX0ADNXUBL6vvy5xKbcHGlKY3lZWhA9AuD/UA2dMoAnto611s5j2XPWWXGmB8N8g==",
+      "sha512": "sVnhkqoopDu4svSjYQEbMvPl3m7WJ/k/Tez7R+ztbDeshbGyKBQ+cnRI83mCZE9PaCbKfPk0b0HDniwDahOewA==",
       "files": [
         "lib/dnx451/Microsoft.WindowsAzure.Storage.dll",
         "lib/dnx451/Microsoft.WindowsAzure.Storage.pdb",

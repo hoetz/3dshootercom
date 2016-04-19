@@ -18147,7 +18147,7 @@
     "System.Reflection.Metadata/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "a8VsRm/B0Ik1o5FumSMWmpwbG7cvIIajAYhzTTy9VB9XItByJDQHGZkQTIAdsvVJ6MI5O3uH/lb0izgQDlDIWA==",
+      "sha512": "RLIE4sSt2zngMLuqM6YmxBH99mTumtT4DNZE4+msfEaInUP5iCLQT+BHPl+2cjSAP1pdALyAjLB8RtCB+WGGWQ==",
       "files": [
         "lib/dotnet5.2/System.Reflection.Metadata.dll",
         "lib/dotnet5.2/System.Reflection.Metadata.xml",
@@ -19939,7 +19939,7 @@
     },
     "WindowsAzure.Storage/6.1.1-preview": {
       "type": "package",
-      "sha512": "mDSDuW0GcVYsV1jILYz2nvMX0ADNXUBL6vvy5xKbcHGlKY3lZWhA9AuD/UA2dMoAnto611s5j2XPWWXGmB8N8g==",
+      "sha512": "sVnhkqoopDu4svSjYQEbMvPl3m7WJ/k/Tez7R+ztbDeshbGyKBQ+cnRI83mCZE9PaCbKfPk0b0HDniwDahOewA==",
       "files": [
         "lib/dnx451/Microsoft.WindowsAzure.Storage.dll",
         "lib/dnx451/Microsoft.WindowsAzure.Storage.pdb",
