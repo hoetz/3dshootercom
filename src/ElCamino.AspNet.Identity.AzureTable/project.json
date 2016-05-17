@@ -31,15 +31,20 @@
     "releaseNotes": "Beta release primarily to support Identity 3.0 Beta6 for ASP.NET 5 dnx and dnx core.",
     "dependencies": {
         "Newtonsoft.Json": "7.0.1",
-        "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
-        "Microsoft.Extensions.DependencyInjection": "1.0.0-rc1-final",
-        "WindowsAzure.Storage": "6.1.1-preview",
-        "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
+        "Microsoft.NETCore.Platforms": "1.0.1-*",
+        "System.Threading.Tasks":"4.0.11-*",
+        "Microsoft.AspNetCore.Identity": "1.0.0-*",
+        "Microsoft.Extensions.DependencyInjection": "1.0.0-*",
+        "WindowsAzure.Storage": "7.0.1-preview",
+        "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-*"
     },
     "frameworks": {
-        "dnx451": {},
-        "dnxcore50": {
-            "dependencies": {}
+        "netstandard1.5":
+        {
+            "imports": [
+                "dnxcore50",
+                "portable-net45+win8"
+            ]
         }
     }
 }

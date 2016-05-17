@@ -1,9 +1,8 @@
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.PlatformAbstractions;
 using System;
 using Web.Domain;
 using ElCamino.AspNet.Identity.AzureTable.Model;
@@ -16,13 +15,13 @@ namespace Web
     public class Startup
     {
 
-        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
+        public Startup(IHostingEnvironment env)
         {
             
             // Setup configuration sources.
-            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(appEnv.ApplicationBasePath);
+            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(env.ContentRootPath); 
 
-            if (env.IsDevelopment() && File.Exists(Path.Combine(appEnv.ApplicationBasePath,"secret.json")))
+            if (env.IsDevelopment() && File.Exists(Path.Combine(env.ContentRootPath,"secret.json")))
             {
                 ConfigurationBuilder
                     .AddJsonFile("secret.json");

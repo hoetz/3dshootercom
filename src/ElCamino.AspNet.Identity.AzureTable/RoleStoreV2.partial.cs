@@ -2,7 +2,7 @@
 #if !net45
 using System;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.WindowsAzure.Storage.Table;
 using ElCamino.AspNet.Identity.AzureTable.Helpers;
 using System.Threading;
