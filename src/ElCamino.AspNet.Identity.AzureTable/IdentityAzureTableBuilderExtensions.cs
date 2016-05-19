@@ -2,7 +2,7 @@
 
 #if !net45
 using System;
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using ElCamino.AspNet.Identity.AzureTable;
 using ElCamino.AspNet.Identity.AzureTable.Model;
 

@@ -4886,7 +4886,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/1.0.0-rc2-final": {
-      "sha512": "Dfvod7+Sk3L01bBXsLCfdr1t0WHmEUV1tEnfs9iOxhaM3ViNI1XC5jSzzill0yVkdhnZ/u4SfsJGy1nw5r9VfQ==",
+      "sha512": "i9HsjubXO6JGGGIkLe/qle2TRD+78oraaVXVQ+koGDSmdhEb/hg71jmOvZQXKqZ3bakx2eG+6U4s2CcEfbPtGw==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.1.0.0-rc2-final.nupkg.sha512",
@@ -4900,7 +4900,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/1.0.0-rc2-final": {
-      "sha512": "YLsLZbwnlQGgTfk6OQE7hYwTCT9/4cg2D+k/ilguxizKVU9u3v4TOQW8daQcN8nas/TNoQxOyzVXYD897Y5Myw==",
+      "sha512": "G0rIiI8hlcYl+QXOIvtM/0Eox0wlxM30itzOQlsYAxsUe6eN5jNuI5BW9SU4QzOARiWaH9gTYnns2xXgKbV4Hw==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Relational.1.0.0-rc2-final.nupkg.sha512",
@@ -4914,7 +4914,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.0.0-rc2-final": {
-      "sha512": "THYJGt3xN9HEycpUpOiTn88FxP3IcGowCbPi9mK4ArAgKDXmn/LXL67YmwM50EEGxLfybxm6yzzgUGe7EY1/kg==",
+      "sha512": "3AcZmXbF7vIQc+l1UQ/6oiP/xTJGEZkyc8CURSXx2JLtUh5AhTnuzy/zqf5s6AgisOpkc0gDdsPiqqk+94cXhQ==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Relational.Design.1.0.0-rc2-final.nupkg.sha512",
@@ -4951,7 +4951,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools.Cli/1.0.0-preview1-final": {
-      "sha512": "A7riVWzHIiobFuJezkYVHDcLOrGQTxJ/Hsq0eCNV/7mHgYG9WYcfuZgvvD3ipY7Cfh0oPLE6dk4Z+qsKSviXgg==",
+      "sha512": "rB+lVCt2vZ7ASHweT2ltuNMPR2xLA45WL2CGmQtrR+ZUoVB++WJLGIDQxisKRcViDA5huwpZkcXW0R0kPSlE9g==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Tools.Cli.1.0.0-preview1-final.nupkg.sha512",
@@ -4964,7 +4964,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools.Core/1.0.0-rc2-final": {
-      "sha512": "RV7C+/J2A4lAffXd2XNA0q4V26dPioAuBFAUiitCxyJT2YHVVX+L8VK5YbTlI/pN+d5qpCye7Qia9pL9RGrjSQ==",
+      "sha512": "0L30NEnJaFdbc8a+B9nLb2kkMfnz94RFvJ8JWlO1u73wRChEafB7wLozyhCJFZziEEp8IbFYTzF3omR6gDfsmA==",
       "type": "package",
       "files": [
         "Microsoft.EntityFrameworkCore.Tools.Core.1.0.0-rc2-final.nupkg.sha512",
@@ -5004,7 +5004,7 @@
       ]
     },
     "Microsoft.Extensions.CommandLineUtils/1.0.0-rc2-final": {
-      "sha512": "i9i6HaRzt9pwralNru1YW9dT53x3g9nWFbhkuILVj1AAgl4eoi8ui7xeqLGQp4xJpGareC95B05ssrIskZSPkg==",
+      "sha512": "W27sd1qlG76lEs/TD6PUJKcJJ572v/WrMtHq8VrHKOcI7NwkTgOaayt+/Mh6Zr7a+EIAAITPOFjKjUiPDEPn+g==",
       "type": "package",
       "files": [
         "Microsoft.Extensions.CommandLineUtils.1.0.0-rc2-final.nupkg.sha512",
@@ -5498,7 +5498,7 @@
       ]
     },
     "NETStandard.Library/1.5.0-rc2-24027": {
-      "sha512": "4f0PviqALhzt6cOGUFibsaXKN+Rh/lwF95LXH9sYURkGjrn28NvkbK18Zw5BXLIL2v2TqzPgaSKsKhUniNMtXA==",
+      "sha512": "SD27bvP2gNnlpC7HZUbnPOXS1M7VbBZoi0bdlqe5tj7weJQ2EyGDGw8mi7K1yUmeqjL6jPWBLSC28TDaLnyqwA==",
       "type": "package",
       "files": [
         "NETStandard.Library.1.5.0-rc2-24027.nupkg.sha512",
@@ -8071,7 +8071,6 @@
       "sha512": "pkQQTBZ5unPWpS0txMVtOqFCfbvOkmQj9obZNWtsuECE31L/OJAbBAztk19EnjfkVS0eh2LHwTG2RjVozkz44g==",
       "type": "package",
       "files": [
-        "System.Private.DataContractSerialization.4.0.0-beta-23109.nupkg",
         "System.Private.DataContractSerialization.4.0.0-beta-23109.nupkg.sha512",
         "System.Private.DataContractSerialization.nuspec",
         "lib/DNXCore50/System.Private.DataContractSerialization.dll",
@@ -9008,7 +9007,6 @@
       "sha512": "1FrHeYgE66pSKlJyjvVdAnDUkpcPkUFR2ptAyzTGOIvZrL8G+2dhmGDMTUrXDzdUWWIa5WR7EhyOJ4MuUE9yzA==",
       "type": "package",
       "files": [
-        "System.Runtime.Serialization.Xml.4.0.10-beta-23109.nupkg",
         "System.Runtime.Serialization.Xml.4.0.10-beta-23109.nupkg.sha512",
         "System.Runtime.Serialization.Xml.nuspec",
         "lib/DNXCore50/System.Runtime.Serialization.Xml.dll",
@@ -10188,7 +10186,6 @@
       "type": "package",
       "files": [
         "License.rtf",
-        "System.Xml.XmlSerializer.4.0.0-beta-23109.nupkg",
         "System.Xml.XmlSerializer.4.0.0-beta-23109.nupkg.sha512",
         "System.Xml.XmlSerializer.nuspec",
         "lib/net45/_._",
@@ -10344,7 +10341,9 @@
       "Microsoft.NETCore.Platforms >= 1.0.1-*",
       "WindowsAzure.Storage >= 7.0.1-preview"
     ],
-    ".NETCoreApp,Version=v1.0": []
+    ".NETCoreApp,Version=v1.0": [
+      "Microsoft.NETCore.App >= 1.0.0-*"
+    ]
   },
   "tools": {},
   "projectFileToolGroups": {}

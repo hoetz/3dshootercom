@@ -1,6 +1,6 @@
 ﻿// MIT License Copyright 2014 (c) David Melendez. All rights reserved. See License.txt in the project root for license information.
 
-using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;

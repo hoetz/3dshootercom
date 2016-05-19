@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using ElCamino.AspNet.Identity.AzureTable;
 using System.Collections.Generic;
 
-namespace Microsoft.AspNet.Identity
+namespace Microsoft.AspNetCore.Identity
 {
     /// <summary>
     /// Default services

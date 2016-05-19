@@ -19,7 +19,7 @@
         "multi-tenant",
         "RA-GRS",
         "geo-redundant",
-        "Microsoft.AspNet.Identity"
+        "Microsoft.AspNetCore.Identity"
     ],
     "projectUrl": "https://identityazuretable.codeplex.com",
     "licenseUrl": "https://identityazuretable.codeplex.com/license",

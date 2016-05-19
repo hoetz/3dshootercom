@@ -8,10 +8,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Collections.Concurrent;
-using Microsoft.AspNet.Identity;
 using Microsoft.WindowsAzure.Storage.Table;
 using ElCamino.AspNet.Identity.AzureTable.Helpers;
 using System.Threading;
+using Microsoft.AspNetCore.Identity;
 
 namespace ElCamino.AspNet.Identity.AzureTable
 {
