@@ -14,6 +14,9 @@ namespace Web
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+#if DEBUG
+        .UseEnvironment("Development") 
+#endif
                 .Build();
 
             host.Run();
