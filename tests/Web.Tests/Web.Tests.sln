@@ -9,6 +9,11 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Web", "..\..\src\Web\Web.xp
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ElCamino.AspNet.Identity.AzureTable", "..\..\src\ElCamino.AspNet.Identity.AzureTable\ElCamino.AspNet.Identity.AzureTable.xproj", "{5FBD2375-18B4-426A-A875-7D99521A4DD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8FEB5AB-E3FE-477B-B946-A50492971B29}"
+	ProjectSection(SolutionItems) = preProject
+		..\global.json = ..\global.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

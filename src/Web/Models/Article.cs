@@ -1,4 +1,6 @@
-public class Article
+using Web.Models;
+
+public class Article: ValueObject<Article>
 {
     public string Text { get; set; }
     public string ImageSrc { get; set; }
