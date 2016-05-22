@@ -11,6 +11,26 @@
 	background-size:cover;
 	background-position: center;
 	margin-right:1px;
+	padding-right:0;
+	
+}
+
+.dimmer
+{
+	background: rgba(202, 78, 78, 0.7);
+	height: 100%;
+}
+
+.headerTitle
+{
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    bottom: 0;
+    line-height: 1.4;
+    z-index: 26;
+    pointer-events: all
 }
 
 .minorHeaderArticle
@@ -29,7 +49,7 @@
 .headerArticles h1
 {
 	padding-left: 20px;
-	color:black;
+	color:white;
 }
 
 .headerArticles h2
@@ -39,8 +59,6 @@
 	font-size:  1.5rem;
 	line-height: 1.5rem;
 }
-
-
 
 .logo
 {
