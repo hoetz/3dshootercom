@@ -64,3 +64,35 @@
 {
 	padding-top:10px;
 }
+
+
+#main
+{
+	width: 960px;
+	margin-left: auto ;
+  	margin-right: auto ;
+}
+
+.articlePic
+{
+	width:20%;
+	float:left;
+	margin-bottom:10px;
+	
+}
+
+.articleText
+{
+	width:80%;
+	float:left;
+}
+
+.articlesRow
+{
+}
+
+.articlesRow::after {
+    content: "";
+    clear: both;
+    display: block;
+}
