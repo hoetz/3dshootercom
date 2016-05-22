@@ -1,0 +1,69 @@
+@font-face {
+			font-family: GothamBook;
+			src: url('GothamBook.ttf');
+			}
+.majorHeaderArticle
+{
+	width: 100%;
+	height: 400px;
+	background-color:#CA4E4E;
+	background-image: url("../images/doomheader.jpg");
+	background-size:cover;
+	background-position: center;
+	margin-right:1px;
+	opacity: 0.2;
+}
+
+.majorHeaderArticleWrapper
+{
+	width: 100%;
+	height: 400px;
+	background-color:#CA4E4E;
+	background-size:cover;
+	background-position: center;
+	margin-right:1px;
+	padding-right:0;
+	
+	
+}
+
+.majorHeaderArticleText
+{
+	position:absolute;
+	width: 50%;
+	z-index: 99;
+}
+
+.minorHeaderArticle
+{
+	height: 200px;
+	background-color: #CA4E4E;
+	margin-bottom:1px;
+}
+
+.headerArticles
+{
+	background-color: #E09ECE;
+}
+
+
+.headerArticles h1
+{
+	padding-left: 20px;
+	color:black;
+}
+
+.headerArticles h2
+{
+	padding-left: 20px;
+	color:white;
+	font-size:  1.5rem;
+	line-height: 1.5rem;
+}
+
+
+
+.logo
+{
+	padding-top:10px;
+}
