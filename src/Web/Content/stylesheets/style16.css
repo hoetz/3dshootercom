@@ -65,6 +65,15 @@
 	padding-top:10px;
 }
 
+body{ background-color:#F1E9E9}
+
+.logoRow
+{
+	background-color:#F1E9E9;
+	padding-top:10px;
+	border-bottom:1px solid #E09ECE;
+}
+
 
 #main
 {
@@ -76,8 +85,9 @@
 .articlePic
 {
 	width:20%;
+	height: 200px;
 	float:left;
-	margin-bottom:10px;
+	background-size: 100% 100%;
 	
 }
 
@@ -87,8 +97,14 @@
 	float:left;
 }
 
+.articlesRow p
+{
+	padding-left: 10px;
+}
+
 .articlesRow
 {
+	margin-top: 10px;
 }
 
 .articlesRow::after {
