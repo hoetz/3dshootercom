@@ -11,27 +11,6 @@
 	background-size:cover;
 	background-position: center;
 	margin-right:1px;
-	opacity: 0.2;
-}
-
-.majorHeaderArticleWrapper
-{
-	width: 100%;
-	height: 400px;
-	background-color:#CA4E4E;
-	background-size:cover;
-	background-position: center;
-	margin-right:1px;
-	padding-right:0;
-	
-	
-}
-
-.majorHeaderArticleText
-{
-	position:absolute;
-	width: 50%;
-	z-index: 99;
 }
 
 .minorHeaderArticle
