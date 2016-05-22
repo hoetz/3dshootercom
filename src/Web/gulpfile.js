@@ -30,10 +30,10 @@ gulp.task('scripts', function () {
 
 
 gulp.task('BootstrapFontCss', function () {
-    gulp.src('bower_components/bootstrap/dist/fonts/**/*.{ttf,woff,woff2,eof,eot,svg}')
-    .pipe(gulp.dest(config.rootFolder+'/fonts'));
+    gulp.src('Content/stylesheets/*.{ttf,woff,woff2,eof,eot,svg}')
+    .pipe(gulp.dest(config.rootFolder+'/css'));
 
-    gulp.src(['bower_components/bootstrap/dist/css/*.min.css','Content/stylesheets/*.css'])
+    gulp.src(['Content/stylesheets/*.css'])
     .pipe(concat('styles.css'))
     .pipe(gulp.dest(config.rootFolder+'/css'));
 });

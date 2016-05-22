@@ -1,30 +1,96 @@
-@model FrontPageModel
 @{
-    Layout = "/Views/Shared/_Layout.cshtml";
+    Layout = null;
     ViewBag.Title = "Home Page";
 }
-<div class="container">
-  <div class="row">
-    @foreach (var article in Model.Articles)
-   {
-    <div class="col-md-3 splash">
-      <p><img src="@string.Format("dist/app/images/{0}",article.ImageSrc)"></p>
-      <p>@article.Date</p>
-      <p>@article.Text</p>
-    </div>
-   }
-    
-  </div>
-  <div class="row">
-    <div id="disqus_thread"></div>
-    <script>
-      var disqus_shortname = '3dshootercom'; // required: replace example with your forum shortname
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+<!DOCTYPE html>
+<html>
 
-    </script>
-  </div>
-</div>
+<head>
+    <title>3DSHOOTER.COM</title>
+    <link href="dist/app/css/styles.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="dist/app/images/favicon.ico">
+</head>
+
+<body>
+    <div class="headerArticles">
+        <section class="grid">
+
+            <div class="majorHeaderArticle" style="background-image: url('dist/app/images/doomheader.jpg');">
+                <div class="dimmer">
+                    <div class="headerTitle">
+                        <h1>DOOM</h1>
+                        <h2>Bemerkenswerte Hommage an die 93er Version mit geschmeidiger Technik & gnadenlos guter Shoot-and-finish-it Mechanik.</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="minors">
+                <section class="grid">
+                    <div class="minorHeaderArticle" style="background-image: url('dist/app/images/overwatch.jpg');">
+                        <div class="dimmer">
+                            <div class="headerTitle">
+                                <h1>Overwatch</h1>
+                                <h2>Team Shooter mit großer Vielfalt an Figuren für unterschiedliche Spielweisen. Maximal zugänglich & ermutigend.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="grid">
+                    <div class="minorHeaderArticle" style="background-image: url('dist/app/images/dott.jpg');">
+                        <div class="dimmer">
+                            <div class="headerTitle">
+                                <h1>Day of the Tentacle</h1>
+                                <h2>Ohne Hilfsmittel forderndes aber definitiv lösbares Juwel der Lucasarts-Ära. Witzig, quirlig & sauber modernisiert.</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </section>
+
+    </div>
+    <div id="main">
+        <div class="logoRow">
+            <div class="logo">
+                <svg width="190" height="70">
+        <image xlink:href="dist/app/images/3ds.svg" src="dist/app/images/3ds.svg" width="190" height="70" />
+        </svg>
+            </div>
+            <div class="logoRowItem">
+                <a href="#">Kontakt</a>
+            </div>
+            <div class="logoRowItem">
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="articlesRow">
+
+            <div class="articlePic" style="background-image: url('dist/app/images/monaco.jpg');">
+                <div class="articlePicTitle"><span>Monaco</span></div>
+            </div>
+            <div class="articleText">
+                <p>lorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem
+                    ipsum dolor estlorem ipsum dolor est</p>
+            </div>
+        </div>
+
+        <div class="articlesRow" >
+
+        <div class="articlePic" style="background-image: url('dist/app/images/monaco.jpg');">
+            <div class="articlePicTitle"><span>Monaco</span></div>
+
+        </div>
+
+        <div class="articleText">
+            <p>lorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem
+                ipsum dolor estlorem ipsum dolor est</p>
+        </div>
+        </div>
+        <div class="footer">
+            <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing flo@3dshooter.com Twitter:@@3dshootercom</p>
+            </div>
+    </div>
+</body>
+
+</html>
