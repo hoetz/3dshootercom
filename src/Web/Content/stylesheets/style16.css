@@ -62,8 +62,30 @@
 
 .logo
 {
-	padding-top:10px;
+	float:left;
 }
+
+a:link, a:visited
+{
+	text-decoration: none;
+	color:#E09ECE;
+}
+
+a:hover
+{
+	text-decoration: none;
+	color:#CA4E4E;
+}
+
+
+.logoRowItem
+{
+	margin-left:20px;
+	height:73px;
+	line-height: 73px;
+	display: inline-block;
+}
+
 
 body{ background-color:#F1E9E9}
 
@@ -72,6 +94,12 @@ body{ background-color:#F1E9E9}
 	background-color:#F1E9E9;
 	padding-top:10px;
 	border-bottom:1px solid #E09ECE;
+}
+
+.logoRow::after {
+    content: "";
+    clear: both;
+    display: block;
 }
 
 
@@ -111,7 +139,7 @@ body{ background-color:#F1E9E9}
 
 .articlesRow p
 {
-	padding-left: 10px;
+	padding-left: 20px;
 }
 
 .articlesRow
@@ -123,4 +151,17 @@ body{ background-color:#F1E9E9}
     content: "";
     clear: both;
     display: block;
+}
+
+.footer
+{
+	border-top:1px solid #E09ECE;
+	margin-top:20px;
+	
+}
+.footer p
+{
+	text-align: center;
+	font-size: x-small;
+	
 }
