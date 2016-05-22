@@ -91,6 +91,18 @@ body{ background-color:#F1E9E9}
 	
 }
 
+.articlePicTitle
+{
+	width: 100%;
+	background: rgba(202, 78, 78, 0.8);
+	color:white;
+}
+
+.articlePicTitle span
+{
+	padding-left: 5px;
+}
+
 .articleText
 {
 	width:80%;
