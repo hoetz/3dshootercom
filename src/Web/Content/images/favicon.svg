@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="78px" height="78px" viewBox="0 0 78 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>3ds</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(45.133514, 47.012193) rotate(-315.000000) translate(-45.133514, -47.012193) translate(9.633514, 18.512193)" fill="#CA4E4E">
+            <g id="Rocket" transform="translate(0.585786, 0.585786)">
+                <rect id="Rectangle-1" x="7.91130186" y="18" width="44.0629471" height="20"></rect>
+                <polyline id="Path-1" points="0 0.585786438 8.01144492 14.5857864 25.9370529 14.5857864 17.925608 0.655786438"></polyline>
+                <polyline id="Path-1" transform="translate(12.968526, 48.414214) scale(1, -1) translate(-12.968526, -48.414214) " points="2.27373675e-13 41.4142136 8.01144492 55.4142136 25.9370529 55.4142136 17.925608 41.4842136"></polyline>
+                <ellipse id="Oval-1" cx="51.9742489" cy="28" rx="18.0257511" ry="10"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

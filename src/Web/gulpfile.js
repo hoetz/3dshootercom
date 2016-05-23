@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
+var uglifycss = require('gulp-uglifycss');
 
 var config = {
     //Include all js files but exclude any min.js files
@@ -35,6 +36,10 @@ gulp.task('BootstrapFontCss', function () {
     .pipe(gulp.dest(config.rootFolder+'/css'));
 
     gulp.src(['Content/stylesheets/*.css'])
+    .pipe(uglifycss({
+      "maxLineLen": 80,
+      "uglyComments": true
+    }))
     .pipe(concat('styles.css'))
     .pipe(gulp.dest(config.rootFolder+'/css'));
 });
