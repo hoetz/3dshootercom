@@ -12,6 +12,7 @@ var config = {
             'scripts/*.js',
             'scripts/**/*.js'
     ],
+    srcCss: ['Content/stylesheets/*.css'],
     rootFolder:"wwwroot/dist/app"
 }
 
@@ -41,4 +42,6 @@ gulp.task('BootstrapFontCss', function () {
 gulp.task('watch', function () {
     //gulp.start('aspnet-run');
     gulp.watch([config.src], ['scripts']);
+    gulp.watch([config.srcCss], ['BootstrapFontCss']);
+
 });

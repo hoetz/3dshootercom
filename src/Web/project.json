@@ -1,38 +1,38 @@
 {
-    "description": "WebPortal",
-    "version": "1.0.0-*",
-    "buildOptions": {
-        "emitEntryPoint": true,
-        "warningsAsErrors": false,
-        "preserveCompilationContext": true
+  "description": "WebPortal",
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "warningsAsErrors": false,
+    "preserveCompilationContext": true
+  },
+  "dependencies": {
+    "Microsoft.NETCore.Platforms": "1.0.1-*",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0-*",
+    "Microsoft.AspNetCore.Mvc": "1.0.0-*",
+    "Microsoft.AspNetCore.Razor.Tools": {
+      "type": "build",
+      "version": "1.0.0-*"
     },
-    "dependencies": {
-        "Microsoft.NETCore.Platforms": "1.0.1-*",
-        "Microsoft.AspNetCore.Diagnostics": "1.0.0-*",
-        "Microsoft.AspNetCore.Mvc": "1.0.0-*",
-        "Microsoft.AspNetCore.Razor.Tools": {
-            "type": "build",
-            "version": "1.0.0-*"
-        },
-        "Microsoft.Extensions.PlatformAbstractions": "1.0.0-*",
-        "Microsoft.Extensions.Configuration": "1.0.0-*",
-        "Microsoft.Extensions.DependencyInjection": "1.0.0-*",
-        "Microsoft.Extensions.Logging": "1.0.0-*",
-        "Microsoft.Extensions.Logging.Console": "1.0.0-*",
-        "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-*",
-        "Microsoft.Extensions.Configuration.Json": "1.0.0-*",
-        "Microsoft.AspNetCore.StaticFiles": "1.0.0-*",
-        "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-*",
-        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
-        "Microsoft.EntityFrameworkCore.Tools": {
-            "version": "1.0.0-*",
-            "type": "build"
-        },
-        "ElCamino.AspNet.Identity.AzureTable": "2.0.0-beta2",
-        "Microsoft.AspNetCore.Identity": "1.0.0-*",
-        "WindowsAzure.Storage": "7.0.1-preview"
+    "Microsoft.Extensions.PlatformAbstractions": "1.0.0-*",
+    "Microsoft.Extensions.Configuration": "1.0.0-*",
+    "Microsoft.Extensions.DependencyInjection": "1.0.0-*",
+    "Microsoft.Extensions.Logging": "1.0.0-*",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-*",
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-*",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-*",
+    "Microsoft.EntityFrameworkCore.Tools": {
+      "version": "1.0.0-*",
+      "type": "build"
     },
-     "tools": {
+    "ElCamino.AspNet.Identity.AzureTable": "2.0.0-beta2",
+    "Microsoft.AspNetCore.Identity": "1.0.0-*",
+    "WindowsAzure.Storage": "7.0.1-preview"
+  },
+  "tools": {
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview1-final",
       "imports": "portable-net45+win8+dnxcore50"
@@ -40,6 +40,10 @@
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
       "version": "1.0.0-preview1-final",
       "imports": "portable-net45+win8+dnxcore50"
+    },
+    "Microsoft.DotNet.Watcher.Tools": {
+      "version": "1.0.0-*",
+      "imports": "portable-net451+win8"
     }
   },
   "frameworks": {
@@ -56,14 +60,14 @@
       }
     }
   },
-   "publishOptions": {
+  "publishOptions": {
     "include": [
       "wwwroot",
       "Views",
       "web.config"
     ]
   },
-   "scripts": {
+  "scripts": {
     "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
