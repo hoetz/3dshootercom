@@ -1,7 +1,5 @@
-@font-face {
-			font-family: GothamBook;
-			src: url('GothamBook.ttf');
-			}
+body{ background-color:#F1E9E9}
+
 .majorHeaderArticle
 {
 	width: 100%;
@@ -15,7 +13,7 @@
 
 .dimmer
 {
-	background: rgba(202, 78, 78, 0.7);
+	background: rgba(202, 78, 78, 0.6);
 	height: 100%;
 	
 }
@@ -85,9 +83,6 @@ a:hover
 	display: inline-block;
 }
 
-
-body{ background-color:#F1E9E9}
-
 .logoRow
 {
 	background-color:#F1E9E9;
@@ -118,6 +113,18 @@ body{ background-color:#F1E9E9}
 	
 }
 
+.articleText
+{
+	width:80%;
+	float:left;
+}
+
+.articlesRow p
+{
+	padding-left: 20px;
+}
+
+
 .articlePicTitle
 {
 	width: 100%;
@@ -130,16 +137,7 @@ body{ background-color:#F1E9E9}
 	padding-left: 5px;
 }
 
-.articleText
-{
-	width:80%;
-	float:left;
-}
 
-.articlesRow p
-{
-	padding-left: 20px;
-}
 
 .articlesRow
 {
@@ -163,4 +161,27 @@ body{ background-color:#F1E9E9}
 	text-align: center;
 	font-size: x-small;
 	
+}
+
+
+
+@media only screen and (min-width : 150px) and (max-width : 780px) {
+
+    #main {
+        width:100%;
+    }
+    .articlePic {
+        float: none;
+        width: 100%;
+    }
+
+    .articleText {
+        float: none;
+        width: auto;
+    }
+
+    .articlesRow p {
+        padding-left: 0px;
+    }
+
 }
