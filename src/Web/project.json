@@ -4,7 +4,8 @@
   "buildOptions": {
     "emitEntryPoint": true,
     "warningsAsErrors": false,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "debugType": "portable"
   },
   "dependencies": {
     "Microsoft.NETCore.Platforms": "1.0.1-*",
