@@ -1,3 +1,5 @@
+@using System.Linq
+@model FrontPageModel
 @{
     Layout = null;
     ViewBag.Title = "Home Page";
@@ -15,32 +17,32 @@
     <div class="headerArticles">
         <section class="grid">
 
-            <div class="majorHeaderArticle" style="background-image: url('dist/app/images/doomheader.jpg');">
+            <div class="majorHeaderArticle" style="background-image: url('@Model.NumberOne.ImageSrc');">
                 <div class="dimmer">
                     <div class="headerTitle">
-                        <h1>DOOM</h1>
-                        <h2>Bemerkenswerte Hommage an die 93er Version mit geschmeidiger Technik & gnadenlos guter Shoot-and-finish-it Mechanik.</h2>
+                        <h1>@Model.NumberOne.Title</h1>
+                        <h2>@Model.NumberOne.Text</h2>
                     </div>
                 </div>
             </div>
 
             <div class="minors">
                 <section class="grid">
-                    <div class="minorHeaderArticle" style="background-image: url('dist/app/images/overwatch.jpg');">
+                    <div class="minorHeaderArticle" style="background-image: url('@Model.NumberTwo.ImageSrc');">
                         <div class="dimmer">
                             <div class="headerTitle">
-                                <h1>Overwatch</h1>
-                                <h2>Team Shooter mit großer Vielfalt an Figuren für unterschiedliche Spielweisen. Maximal zugänglich & ermutigend.</h2>
+                                 <h1>@Model.NumberTwo.Title</h1>
+                                 <h2>@Model.NumberTwo.Text</h2>
                             </div>
                         </div>
                     </div>
                 </section>
                 <section class="grid">
-                    <div class="minorHeaderArticle" style="background-image: url('dist/app/images/dott.jpg');">
+                     <div class="minorHeaderArticle" style="background-image: url('@Model.NumberThree.ImageSrc');">
                         <div class="dimmer">
                             <div class="headerTitle">
-                                <h1>Day of the Tentacle</h1>
-                                <h2>Ohne Hilfsmittel forderndes aber definitiv lösbares Juwel der Lucasarts-Ära. Witzig, quirlig & sauber modernisiert.</h2>
+                                 <h1>@Model.NumberThree.Title</h1>
+                                 <h2>@Model.NumberThree.Text</h2>
                             </div>
                         </div>
                     </div>
@@ -58,37 +60,27 @@
         </svg>
             </div>
             <div class="logoRowItem">
-                <a href="#">Kontakt</a>
+                <a href="mailto:flo@3dshooter.com">Kontakt</a>
             </div>
             <div class="logoRowItem">
-                <a href="#">Twitter</a>
+                <a href="https://twitter.com/3dshootercom" target="blank">Twitter</a>
             </div>
         </div>
-        <div class="articlesRow">
+          @foreach (var article in Model.OtherArticles)
+          {
+              <div class="articlesRow">
 
-            <div class="articlePic" style="background-image: url('dist/app/images/monaco.jpg');">
-                <div class="articlePicTitle"><span>Monaco</span></div>
+            <div class="articlePic" style="background-image: url('@article.ImageSrc');">
+                <div class="articlePicTitle"><span>@article.Title</span></div>
             </div>
             <div class="articleText">
-                <p>lorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem
-                    ipsum dolor estlorem ipsum dolor est</p>
+                <p>@article.Text</p>
             </div>
         </div>
-
-        <div class="articlesRow" >
-
-        <div class="articlePic" style="background-image: url('dist/app/images/monaco.jpg');">
-            <div class="articlePicTitle"><span>Monaco</span></div>
-
-        </div>
-
-        <div class="articleText">
-            <p>lorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem ipsum dolor estlorem
-                ipsum dolor estlorem ipsum dolor est</p>
-        </div>
-        </div>
+          }
+        
         <div class="footer">
-            <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing flo@3dshooter.com Twitter:@@3dshootercom</p>
+            <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing Mail: <a href="mailto:flo@3dshooter.com">flo@3dshooter.com</a> Twitter:<a href="https://twitter.com/3dshootercom">@@3dshootercom</a></p>
             </div>
     </div>
 </body>

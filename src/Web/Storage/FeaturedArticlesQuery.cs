@@ -9,6 +9,9 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
 {
     private CloudTableClient _CloudTableClient;
     private string _TableName;
+    private string _FeaturedArticlesPartitionKeyName="featured";
+    private string _GeneralArticlesPartKeyName="myarticles";
+    
     public FeaturedArticlesQuery(string azureConString)
     {
         var storageAccount = CloudStorageAccount.Parse(azureConString);
@@ -16,11 +19,11 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
         this._TableName = "shooterArticles";
     }
 
-    public async Task<IEnumerable<Article>> Get()
+    public async Task<IEnumerable<Article>> GetThreeAmigos()
     {
         var myQuery =
                 new TableQuery()
-                .Where(TableQuery.GenerateFilterConditionForBool("featured", "eq", true))
+                .Where(TableQuery.GenerateFilterCondition("PartitionKey", "eq", this._FeaturedArticlesPartitionKeyName))
                 .Take(1);
 
         var table = this.GetTableReference(this._CloudTableClient, this._TableName);
@@ -35,10 +38,31 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
         return returnList.Select(ToDomainArticle);
 
     }
+    
+    
+    public async Task<IEnumerable<Article>> GetOtherFrontPageArticles()
+    {
+        var myQuery =
+                new TableQuery()
+                .Where(TableQuery.GenerateFilterCondition("PartitionKey", "eq", this._GeneralArticlesPartKeyName))
+                .Take(1);
+
+        var table = this.GetTableReference(this._CloudTableClient, this._TableName);
+        TableQuerySegment querySegment = null;
+        var returnList = new List<DynamicTableEntity>();
+        while (querySegment == null || querySegment.ContinuationToken != null)
+        {
+            querySegment = await table.ExecuteQuerySegmentedAsync(myQuery, querySegment != null ?
+                                             querySegment.ContinuationToken : null);
+            returnList.AddRange(querySegment);
+        }
+        return returnList.Select(ToDomainArticle);
+    }
 
     private Article ToDomainArticle(DynamicTableEntity e)
     {
         return new Article(
+                    e.Properties.ContainsKey("title")?e.Properties["title"].StringValue:"",
                     e.Properties["text"].StringValue,
                     e.Properties["image"].StringValue,
                     e.Properties["Datum"].StringValue,
@@ -50,4 +74,5 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
         var table = client.GetTableReference(TableName);
         return table;
     }
+
 }

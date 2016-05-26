@@ -8,11 +8,13 @@ using System.Linq;
 
 public class HomeTests
 {
-    private static List<Article> TestArticles = new List<Article>() { new Article("text", "img", "date", 1) };
+    private static List<Article> TestArticles = new List<Article>() { new Article("title","text", "img", "date", 1) };
+    private static List<Article> TestArticles2 = new List<Article>() { new Article("title","text", "img", "date", 1) };
+    
     [Fact]
     public async Task Index_OnGet_ReturnsFrontPageModel()
     {
-        FrontPageModel model = new FrontPageModel(TestArticles);
+        FrontPageModel model = new FrontPageModel(TestArticles,TestArticles2);
         var service = Substitute.For<IFrontPageService>();
         var sut = new HomeController(service);
 
@@ -27,16 +29,16 @@ public class HomeTests
     {
         var service = Substitute.For<IFrontPageService>();
         var sut = new HomeController(service);
-        var articles = TestArticles;
+        var threeHeaderArticles = TestArticles;
 
-        service.GetFrontPageModelAsync().Returns(Task.FromResult(new FrontPageModel(articles)));
+        service.GetFrontPageModelAsync().Returns(Task.FromResult(new FrontPageModel(threeHeaderArticles,TestArticles2)));
         ViewResult result = await sut.Index() as ViewResult;
 
         var model = result.ViewData.Model as FrontPageModel;
 
-        for (int i = 0; i < articles.Count; i++)
+        for (int i = 0; i < threeHeaderArticles.Count; i++)
         {
-            Assert.True(articles[i].Equals(model.Articles.ElementAt(i)));
+            Assert.True(threeHeaderArticles[i].Equals(model.ThreeAmigos.ElementAt(i)));
         }
     }
 }

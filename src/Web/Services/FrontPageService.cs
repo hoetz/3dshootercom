@@ -17,8 +17,9 @@ public class FrontPageService:IFrontPageService
   }
   public async Task<FrontPageModel> GetFrontPageModelAsync()
   {
-        var articles=await this.articlesQuery.Get();
-        FrontPageModel model = new FrontPageModel(articles.OrderBy(x => x.Position));
+        var threeAmigosHeaderArticles=await this.articlesQuery.GetThreeAmigos();
+        var otherArticles=await this.articlesQuery.GetOtherFrontPageArticles();
+        FrontPageModel model = new FrontPageModel(threeAmigosHeaderArticles.OrderBy(x => x.Position),otherArticles.OrderBy(x => x.Position));
         return model;
     }
 }

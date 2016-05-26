@@ -5,6 +5,8 @@ namespace Web.Domain
 {
     public interface IFeaturedArticlesQuery
     {
-        Task<IEnumerable<Article>> Get();
+        Task<IEnumerable<Article>> GetThreeAmigos();
+        Task<IEnumerable<Article>> GetOtherFrontPageArticles();
+        
     }
 }

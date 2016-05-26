@@ -123,6 +123,8 @@ a:hover
 .articlesRow p
 {
 	padding-left: 20px;
+	margin-top: -7px;
+	font-size: 1.5rem;
 }
 
 
@@ -142,7 +144,8 @@ a:hover
 
 .articlesRow
 {
-	margin-top: 10px;
+	margin-top: 20px;
+	
 }
 
 .articlesRow::after {
@@ -183,6 +186,8 @@ a:hover
 
     .articlesRow p {
         padding-left: 0px;
+		margin-top: 5px;
+		
     }
 
 }
