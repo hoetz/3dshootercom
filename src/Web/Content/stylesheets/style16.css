@@ -109,7 +109,8 @@ a:hover
 	width:20%;
 	height: 200px;
 	float:left;
-	background-size: 100% 100%;
+	background-size: cover;
+    background-position: center;
 	
 }
 
