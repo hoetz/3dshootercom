@@ -4,6 +4,50 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using Web.Domain;
 using System.Threading.Tasks;
+using System;
+
+public class AzureArticleQuery : IAzureArticleQuery
+{
+    private CloudTableClient _CloudTableClient;
+    
+    private string _TableName = "shooterArticles";
+    
+    
+    public AzureArticleQuery(string azureConString)
+    {
+        var storageAccount = CloudStorageAccount.Parse(azureConString);
+        this._CloudTableClient = storageAccount.CreateCloudTableClient();
+    }
+    
+    public async Task<Article> GetBy(int id)
+    {
+        var myQuery =
+                new TableQuery()
+                .Where(TableQuery.GenerateFilterCondition("RowKey", "eq", id.ToString()))
+                .Take(1);
+
+        var table = this.GetTableReference(this._CloudTableClient, this._TableName);
+        TableQuerySegment querySegment = null;
+        var returnList = new List<DynamicTableEntity>();
+        while (querySegment == null || querySegment.ContinuationToken != null)
+        {
+            querySegment = await table.ExecuteQuerySegmentedAsync(myQuery, querySegment != null ?
+                                             querySegment.ContinuationToken : null);
+            returnList.AddRange(querySegment);
+        }
+        if (returnList.Any())
+            return FeaturedArticlesQuery.ToDomainArticle(returnList.First());
+        else
+            throw new ArgumentException("No article found for {id}");
+          
+    }
+    
+    private CloudTable GetTableReference(CloudTableClient client, string TableName)
+    {
+        var table = client.GetTableReference(TableName);
+        return table;
+    }
+}
 
 public class FeaturedArticlesQuery : IFeaturedArticlesQuery
 {
@@ -59,14 +103,16 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
         return returnList.Select(ToDomainArticle);
     }
 
-    private Article ToDomainArticle(DynamicTableEntity e)
+    public static Article ToDomainArticle(DynamicTableEntity e)
     {
         return new Article(
                     e.Properties.ContainsKey("title")?e.Properties["title"].StringValue:"",
                     e.Properties["text"].StringValue,
                     e.Properties["image"].StringValue,
                     e.Properties["Datum"].StringValue,
-                    e.Properties["pos"].Int32Value.Value);
+                    e.Properties["pos"].Int32Value.Value,
+                    e.Properties.ContainsKey("content")?e.Properties["content"].StringValue:"",
+                    e.Properties.ContainsKey("author")?e.Properties["author"].StringValue:"");
     }
 
     private CloudTable GetTableReference(CloudTableClient client, string TableName)

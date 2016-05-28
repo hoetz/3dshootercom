@@ -39,9 +39,13 @@ namespace Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-              services.AddScoped<IFeaturedArticlesQuery>((x)
+            services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));
+                  services.AddScoped<IAzureArticleQuery>((x)
+                  => new AzureArticleQuery(Configuration.GetSection("AzureConString").Value));
             services.AddScoped<IFrontPageService, FrontPageService>();
+            services.AddScoped<IArticleService, ArticleService>();
+            
             
             // Add Identity services to the services container.
             services.AddIdentity<ApplicationUser, IdentityRole>((config) =>

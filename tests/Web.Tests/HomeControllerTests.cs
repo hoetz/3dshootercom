@@ -8,8 +8,8 @@ using System.Linq;
 
 public class HomeTests
 {
-    private static List<Article> TestArticles = new List<Article>() { new Article("title","text", "img", "date", 1) };
-    private static List<Article> TestArticles2 = new List<Article>() { new Article("title","text", "img", "date", 1) };
+    private static List<Article> TestArticles = new List<Article>() { new Article("title","text", "img", "date", 1,"","") };
+    private static List<Article> TestArticles2 = new List<Article>() { new Article("title","text", "img", "date", 1,"","") };
     
     [Fact]
     public async Task Index_OnGet_ReturnsFrontPageModel()
