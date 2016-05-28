@@ -84,6 +84,7 @@ namespace Web
 
             // Add cookie-based authentication to the request pipeline.
             app.UseIdentity();
+            
 
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>

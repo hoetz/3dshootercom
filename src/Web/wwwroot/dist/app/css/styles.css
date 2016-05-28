@@ -66,6 +66,12 @@ body{background-color:#f1e9e9}.majorHeaderArticle{height:401px;width:100%;backgr
 .articlePicTitle{width:100%;background:rgba(202,78,78,0.8);color:white}.articlePicTitle span{padding-left:5px}
 .articlesRow{margin-top:20px}.articlesRow::after{content:"";clear:both;display:block}
 .footer{border-top:1px solid #e09ece;margin-top:20px}.footer p{text-align:center;font-size:x-small}
-@media only screen and (min-width :150px) and (max-width :780px){#main{width:100%}
-.articlePic{float:none;width:100%}.articleText{float:none;width:auto}.articlesRow p{padding-left:0;margin-top:5px}
-}
+@media only screen and (min-width:150px) and (max-width:780px){#main{width:100%}.articlePic{float:none;width:100%}
+.articleText{float:none;width:auto}.articlesRow p{padding-left:0;margin-top:5px}}
+#articleMain{width:960px;margin-left:auto;margin-right:auto}#articleMainHeader{z-index:1;top:50%}
+#articleMainHeader header{height:32em;text-align:center}#articleMainHeader header h1{color:white;text-shadow:3px 3px rgba(0,0,0,0.3);text-transform:uppercase}
+#articleLogoRowWrapper{width:100%;background-color:white}#articleLogoRow{width:960px;background-color:white;font-size:1rem;height:40px;margin-left:auto;margin-right:auto}
+#articleBackOverlay{position:absolute;display:block;top:40px;left:0;z-index:-1;width:100%;height:32em;background-size:cover;background-position:top center}
+.articleLogoRowItem{margin-left:20px;display:inline-block;line-height:37px}.article-firstblock::first-letter {font-weight:300;font-size:5rem;float:left;margin-left:-5px;padding:2px .2em 0 0;line-height:.8em}
+@media only screen and (min-width:150px) and (max-width:959px){#articleMain{width:100%}
+#articleLogoRow{width:100%}}

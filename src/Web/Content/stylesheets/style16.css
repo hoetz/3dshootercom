@@ -1,93 +1,82 @@
-body{ background-color:#F1E9E9}
-
-.majorHeaderArticle
-{
-    height:401px;
-	width: 100%;
-	background-color:#CA4E4E;
-	background-size:cover;
-	background-position: center;
-	margin-right: 1px;
-    margin-bottom:1px;
+body {
+    background-color: #F1E9E9
 }
 
-.dimmer
-{
-	background: rgba(202, 78, 78, 0.6);
-	min-height: 100%;
-	
-}
-.dimmer:hover
-{
-	background: rgba(202, 78, 78, 0.9);
-	height: 100%;
+.majorHeaderArticle {
+    height: 401px;
+    width: 100%;
+    background-color: #CA4E4E;
+    background-size: cover;
+    background-position: center;
+    margin-right: 1px;
+    margin-bottom: 1px;
 }
 
-.minors{
-    width:100%
+.dimmer {
+    background: rgba(202, 78, 78, 0.6);
+    min-height: 100%;
 }
 
-.minorHeaderArticle
-{
-	height: 200px;
-	background-color: #CA4E4E;
-	margin-bottom:1px;
-	background-size:cover;
-	background-position: center;
-	width: 100%;
+.dimmer:hover {
+    background: rgba(202, 78, 78, 0.9);
+    height: 100%;
 }
 
-.headerArticles
-{
-	background-color: #E09ECE;
+.minors {
+    width: 100%
 }
 
-
-.headerArticles h1
-{
-	padding-left: 20px;
-	color:white;
+.minorHeaderArticle {
+    height: 200px;
+    background-color: #CA4E4E;
+    margin-bottom: 1px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
 }
 
-.headerArticles h2
-{
-	padding-left: 20px;
-	color:white;
-	font-size:  1.5rem;
-	line-height: 1.5rem;
+.headerArticles {
+    background-color: #E09ECE;
 }
 
-.logo
-{
-	float:left;
+.headerArticles h1 {
+    padding-left: 20px;
+    color: white;
 }
 
-a:link, a:visited
-{
-	text-decoration: none;
-	color:#E09ECE;
+.headerArticles h2 {
+    padding-left: 20px;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
 }
 
-a:hover
-{
-	text-decoration: none;
-	color:#CA4E4E;
+.logo {
+    float: left;
 }
 
-
-.logoRowItem
-{
-	margin-left:20px;
-	height:73px;
-	line-height: 73px;
-	display: inline-block;
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #E09ECE;
 }
 
-.logoRow
-{
-	background-color:#F1E9E9;
-	padding-top:10px;
-	border-bottom:1px solid #E09ECE;
+a:hover {
+    text-decoration: none;
+    color: #CA4E4E;
+}
+
+.logoRowItem {
+    margin-left: 20px;
+    height: 73px;
+    line-height: 73px;
+    display: inline-block;
+}
+
+.logoRow {
+    background-color: #F1E9E9;
+    padding-top: 10px;
+    border-bottom: 1px solid #E09ECE;
 }
 
 .logoRow::after {
@@ -96,56 +85,43 @@ a:hover
     display: block;
 }
 
-
-#main
-{
-	width: 960px;
-	margin-left: auto ;
-  	margin-right: auto ;
+#main {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.articlePic
-{
-	width:20%;
-	height: 200px;
-	float:left;
-	background-size: cover;
+.articlePic {
+    width: 20%;
+    height: 200px;
+    float: left;
+    background-size: cover;
     background-position: center;
-	
 }
 
-.articleText
-{
-	width:80%;
-	float:left;
+.articleText {
+    width: 80%;
+    float: left;
 }
 
-.articlesRow p
-{
-	padding-left: 20px;
-	margin-top: -7px;
-	font-size: 1.5rem;
+.articlesRow p {
+    padding-left: 20px;
+    margin-top: -7px;
+    font-size: 1.5rem;
 }
 
-
-.articlePicTitle
-{
-	width: 100%;
-	background: rgba(202, 78, 78, 0.8);
-	color:white;
+.articlePicTitle {
+    width: 100%;
+    background: rgba(202, 78, 78, 0.8);
+    color: white;
 }
 
-.articlePicTitle span
-{
-	padding-left: 5px;
+.articlePicTitle span {
+    padding-left: 5px;
 }
 
-
-
-.articlesRow
-{
-	margin-top: 20px;
-	
+.articlesRow {
+    margin-top: 20px;
 }
 
 .articlesRow::after {
@@ -154,40 +130,106 @@ a:hover
     display: block;
 }
 
-.footer
-{
-	border-top:1px solid #E09ECE;
-	margin-top:20px;
-	
-}
-.footer p
-{
-	text-align: center;
-	font-size: x-small;
-	
+.footer {
+    border-top: 1px solid #E09ECE;
+    margin-top: 20px;
 }
 
+.footer p {
+    text-align: center;
+    font-size: x-small;
+}
 
-
-@media only screen and (min-width : 150px) and (max-width : 780px) {
-
+@media only screen and (min-width: 150px) and (max-width: 780px) {
     #main {
-        width:100%;
+        width: 100%;
     }
     .articlePic {
         float: none;
         width: 100%;
     }
-
     .articleText {
         float: none;
         width: auto;
     }
-
     .articlesRow p {
         padding-left: 0px;
-		margin-top: 5px;
-		
+        margin-top: 5px;
     }
+}
 
+
+/* article css */
+
+#articleMain {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#articleMainHeader {
+    z-index: 1;
+    top: 50%;
+}
+
+#articleMainHeader header {
+    height: 32em;
+    text-align: center;
+    /*media all*/
+}
+
+#articleMainHeader header h1 {
+    color: white;
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+
+#articleLogoRowWrapper {
+    width: 100%;
+    background-color: white;
+}
+
+#articleLogoRow {
+    width: 960px;
+    background-color: white;
+    font-size: 1.0rem;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#articleBackOverlay {
+    position: absolute;
+    display: block;
+    top: 40px;
+    left: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 32em;
+    background-size: cover;
+    background-position: top center;
+}
+
+.articleLogoRowItem {
+    margin-left: 20px;
+    display: inline-block;
+    line-height: 37px;
+}
+
+.article-firstblock::first-letter {
+    font-weight: 300;
+    font-size: 5rem;
+    float: left;
+    margin-left: -5px;
+    padding: 2px 0.2em 0 0;
+    line-height: 0.8em;
+}
+
+@media only screen and (min-width: 150px) and (max-width: 959px) {
+    #articleMain {
+        width: 100%;
+    }
+    #articleLogoRow {
+        width: 100%;
+    }
 }
