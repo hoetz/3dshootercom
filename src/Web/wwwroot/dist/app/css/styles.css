@@ -76,6 +76,6 @@ body{background-color:#f1e9e9}.majorHeaderArticle{height:401px;width:100%;backgr
 .articleLogoRowItem{margin-left:20px;display:inline-block;line-height:37px}.article-firstblock::first-letter {font-weight:300;font-size:5rem;float:left;margin-left:-5px;padding:2px .2em 0 0;line-height:.8em}
 .footerArticle{border-top:1px solid #e09ece;margin-top:20px;width:960px;margin-left:auto;margin-right:auto}
 .footerArticle p{text-align:center;font-size:x-small}#article-body{margin-top:10px}
-@media only screen and (min-width:150px) and (max-width:959px){#articleMain{width:100%}
+.articleVideo{text-align:center}@media only screen and (min-width:150px) and (max-width:959px){#articleMain{width:100%}
 #articleLogoRow{width:100%}.footerArticle{width:100%}#article-body{margin-left:5px;padding-right:5px}
 }

@@ -106,6 +106,7 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
     public static Article ToDomainArticle(DynamicTableEntity e)
     {
         return new Article(
+                    int.Parse(e.RowKey),
                     e.Properties.ContainsKey("title")?e.Properties["title"].StringValue:"",
                     e.Properties["text"].StringValue,
                     e.Properties["image"].StringValue,
