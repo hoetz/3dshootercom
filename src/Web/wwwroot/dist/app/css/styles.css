@@ -55,7 +55,7 @@ input:-webkit-autofill,select:-webkit-autofill,textarea:-webkit-autofill{color:#
 .wrapper-small{margin:0 auto;max-width:640px;padding:2.4rem 2rem}
 body{background-color:#f1e9e9}.majorHeaderArticle{height:401px;width:100%;background-color:#ca4e4e;background-size:cover;background-position:center;margin-right:1px;margin-bottom:1px}
 .dimmer{background:rgba(202,78,78,0.6);min-height:100%}.dimmer:hover{background:rgba(202,78,78,0.9);height:100%}
-.minors{width:100%}.minorHeaderArticle{height:200px;background-color:#ca4e4e;margin-bottom:1px;background-size:cover;background-position:center;width:100%}
+.minors{width:100%}.minorHeaderArticle{height:200px;overflow:hidden;background-color:#ca4e4e;margin-bottom:1px;background-size:cover;background-position:center;width:100%}
 .headerArticles{background-color:#e09ece}.headerArticles h1{padding-left:20px;color:white}
 .headerArticles h2{padding-left:20px;color:white;font-size:1.5rem;line-height:1.5rem}
 .logo{float:left}a:link,a:visited{text-decoration:none;color:#e09ece}a:hover{text-decoration:none;color:#ca4e4e}

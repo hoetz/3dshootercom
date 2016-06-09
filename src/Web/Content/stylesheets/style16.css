@@ -12,6 +12,7 @@ body {
     margin-bottom: 1px;
 }
 
+
 .dimmer {
     background: rgba(202, 78, 78, 0.6);
     min-height: 100%;
@@ -33,6 +34,7 @@ body {
     background-size: cover;
     background-position: center;
     width: 100%;
+    overflow:hidden;
 }
 
 .headerArticles {
