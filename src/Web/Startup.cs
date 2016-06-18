@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore; 
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.DataProtection;
 using System;
 using Web.Domain;
-using ElCamino.AspNet.Identity.AzureTable.Model;
-using ElCamino.AspNet.Identity.AzureTable;
 using System.IO;
 
 namespace Web
@@ -45,21 +47,18 @@ namespace Web
                   => new AzureArticleQuery(Configuration.GetSection("AzureConString").Value));
             services.AddScoped<IFrontPageService, FrontPageService>();
             services.AddScoped<IArticleService, ArticleService>();
-            
-            
-            // Add Identity services to the services container.
-            services.AddIdentity<ApplicationUser, IdentityRole>((config) =>
-            {
-                
+
+              // Add framework services.
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetSection("AzureSQLConString").Value));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+                options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
+                options.Cookies.ApplicationCookie.CookieName = "Interop";
             })
-                //.AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddAzureTableStores<IdentityCloudContext>(new Func<IdentityConfiguration>(() =>
-                {
-                    return new IdentityConfiguration() {
-                        StorageConnectionString = Configuration.GetSection("AzureConString").Value,
-                    };
-                }))
+                .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+       
 
   
             
@@ -87,7 +86,12 @@ namespace Web
             app.UseStaticFiles();
 
             // Add cookie-based authentication to the request pipeline.
-            app.UseIdentity();
+            app.UseIdentity().UseTwitterAuthentication(new TwitterOptions
+                {
+                    ConsumerKey = "ehWKBer0gENGJka9T5UMHHkED",
+                    ConsumerSecret = "l95fNu1ClgngGiLWy4qLmI7g0jiRiQ3hZAj5vl1W0wzL1SfPPy"
+                });
+
             
 
             // Add MVC to the request pipeline.
