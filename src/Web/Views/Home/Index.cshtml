@@ -1,5 +1,8 @@
 @using System.Linq
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 @model FrontPageModel
 @{
     Layout = null;
@@ -84,6 +87,20 @@
         
         <div class="footer">
             <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing Mail: <a href="mailto:flo@3dshooter.com">flo@3dshooter.com</a> Twitter:<a href="https://twitter.com/3dshootercom">@@3dshootercom</a></p>
+            @if (SignInManager.IsSignedIn(User))
+{
+   
+    <form style="text-align:center" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+        
+         
+                <a asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+           
+         
+                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log off</button>
+           
+       
+    </form>
+}
             </div>
     </div>
 </body>
