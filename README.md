@@ -2,7 +2,7 @@
 This is the source code of www.3dshooter.com which is primarily a testbed for ASP.NET 5.
 
 Technology used:
-* ASP.NET 5
+* ASP.NET Core
 * MVC 6
 * Azure Table Storage
 * bower
