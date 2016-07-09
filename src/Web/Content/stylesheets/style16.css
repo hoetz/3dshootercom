@@ -29,12 +29,12 @@ body {
 
 .minorHeaderArticle {
     height: 200px;
+    overflow:hidden;
     background-color: #CA4E4E;
     margin-bottom: 1px;
     background-size: cover;
     background-position: center;
     width: 100%;
-    overflow:hidden;
 }
 
 .headerArticles {
