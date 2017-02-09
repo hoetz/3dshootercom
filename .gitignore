@@ -12,3 +12,4 @@ node_modules
 .settings/
 Properties
 *.lock.json
+/src/Web/Web.csproj.user
