@@ -19,6 +19,7 @@ public class TwitterQuery : ITwitterQuery
         settings.Twitter_AccessToken, settings.Twitter_AccessSecret, settings.Twitter_UserId, settings.Twitter_ScreenName);
 
         var tweets = await tokens.Statuses.UserTimelineAsync(count => 10);
-        return tweets.Select(x => new TweetModel(x.Text, x.CreatedAt));
+        
+        return tweets.Select(x => new TweetModel(x.Text, x.CreatedAt,x.Id));
     }
 }

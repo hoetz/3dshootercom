@@ -118,9 +118,10 @@ a:hover {
     color: white;
 }
 
-.articlePicTitle span {
-    padding-left: 5px;
+.articlePicTitle a:link,a:visited {
+    color: white;
 }
+
 
 .articlesRow {
     margin-top: 20px;

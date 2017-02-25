@@ -63,7 +63,7 @@ body{background-color:#f1e9e9}.majorHeaderArticle{height:401px;width:100%;backgr
 .logoRow::after{content:"";clear:both;display:block}#main{width:960px;margin-left:auto;margin-right:auto}
 .articlePic{width:20%;height:200px;float:left;background-size:cover;background-position:center}
 .articleText{width:80%;float:left}.articlesRow p{padding-left:20px;margin-top:-7px;font-size:1.5rem}
-.articlePicTitle{width:100%;background:rgba(202,78,78,0.8);color:white}.articlePicTitle span{padding-left:5px}
+.articlePicTitle{width:100%;background:rgba(202,78,78,0.8);color:white}.articlePicTitle a:link,a:visited{color:white}
 .articlesRow{margin-top:20px}.articlesRow::after{content:"";clear:both;display:block}
 .footer{border-top:1px solid #e09ece;margin-top:20px}.footer p{text-align:center;font-size:x-small}
 @media only screen and (min-width:150px) and (max-width:780px){#main{width:100%}.articlePic{float:none;width:100%}

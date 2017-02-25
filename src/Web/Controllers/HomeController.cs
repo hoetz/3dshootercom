@@ -11,6 +11,8 @@ namespace Web.Controllers
         {
             this.service = service;
         }
+
+        [ResponseCache(Duration=5)]
         public async Task<IActionResult> Index()
         {
             var model = await this.service.GetFrontPageModelAsync();

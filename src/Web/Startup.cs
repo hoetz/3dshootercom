@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using Web.Domain;
 using System.IO;
-using Microsoft.Extensions.Configuration.Binder;
 
 namespace Web
 {

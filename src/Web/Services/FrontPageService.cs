@@ -21,7 +21,7 @@ public class FrontPageService : IFrontPageService
     public async Task<FrontPageModel> GetFrontPageModelAsync()
     {
         var threeAmigosHeaderArticles = await this.articlesQuery.GetThreeAmigos();
-        var otherArticles = (await this.twitterQuery.GetTop10TweetsFrom()).Select(x=>new ShortArticle(x.FullText,x.CreatedAt,"",""));
+        var otherArticles = (await this.twitterQuery.GetTop10TweetsFrom()).Select(x=>x.ToShortArticle());
         FrontPageModel model = new FrontPageModel(threeAmigosHeaderArticles.OrderBy(x => x.Position), otherArticles.OrderByDescending(x => x.CreatedAt));
         return model;
     }
