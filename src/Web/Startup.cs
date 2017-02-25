@@ -2,26 +2,26 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore; 
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using Web.Domain;
 using System.IO;
+using Microsoft.Extensions.Configuration.Binder;
 
 namespace Web
 {
-
     public class Startup
     {
 
         public Startup(IHostingEnvironment env)
         {
-            
-            // Setup configuration sources.
-            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(env.ContentRootPath); 
 
-            if (env.IsDevelopment() && File.Exists(Path.Combine(env.ContentRootPath,"secret.json")))
+            // Setup configuration sources.
+            var ConfigurationBuilder = new ConfigurationBuilder().SetBasePath(env.ContentRootPath);
+
+            if (env.IsDevelopment() && File.Exists(Path.Combine(env.ContentRootPath, "secret.json")))
             {
                 ConfigurationBuilder
                     .AddJsonFile("secret.json");
@@ -32,34 +32,42 @@ namespace Web
           .AddEnvironmentVariables();
             }
 
-            this.Configuration=ConfigurationBuilder.Build();
+            this.Configuration = ConfigurationBuilder.Build();
 
         }
         public IConfiguration Configuration { get; private set; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
+
+            services.Configure<TwitterSettings>(options => Configuration.GetSection("Twitter").Bind(options));
+
             services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));
-                  services.AddScoped<IAzureArticleQuery>((x)
-                  => new AzureArticleQuery(Configuration.GetSection("AzureConString").Value));
+
+            services.AddScoped<ITwitterQuery, TwitterQuery>();
+
+            services.AddScoped<IAzureArticleQuery>((x)
+            => new AzureArticleQuery(Configuration.GetSection("AzureConString").Value));
             services.AddScoped<IFrontPageService, FrontPageService>();
             services.AddScoped<IArticleService, ArticleService>();
 
-              // Add framework services.
+            // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(Configuration.GetSection("AzureSQLConString").Value));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
                 options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
                 options.Cookies.ApplicationCookie.CookieName = "Interop";
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-       
 
-  
-            
+
+
+
             services.AddMvc();
         }
 
@@ -85,12 +93,12 @@ namespace Web
 
             // Add cookie-based authentication to the request pipeline.
             app.UseIdentity().UseTwitterAuthentication(new TwitterOptions
-                {
-                    ConsumerKey = "ehWKBer0gENGJka9T5UMHHkED",
-                    ConsumerSecret = "l95fNu1ClgngGiLWy4qLmI7g0jiRiQ3hZAj5vl1W0wzL1SfPPy"
-                });
+            {
+                ConsumerKey = "ehWKBer0gENGJka9T5UMHHkED",
+                ConsumerSecret = "l95fNu1ClgngGiLWy4qLmI7g0jiRiQ3hZAj5vl1W0wzL1SfPPy"
+            });
 
-            
+
 
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>

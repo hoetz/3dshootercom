@@ -13,3 +13,4 @@ node_modules
 Properties
 *.lock.json
 /src/Web/Web.csproj.user
+.idea

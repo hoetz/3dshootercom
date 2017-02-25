@@ -39,7 +39,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder " Version="1.0.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="8.0.1" />
+    <PackageReference Include="CoreTweet" Version="0.7.2.352"/>
   </ItemGroup>
 
   <!--<Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
