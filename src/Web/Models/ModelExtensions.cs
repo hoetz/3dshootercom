@@ -6,7 +6,7 @@ public static class ModelExtensions
     public static ShortArticle ToShortArticle(this TweetModel t)
     {
         string title=GetTitleFrom(t);
-        return new ShortArticle(t.FullText.Replace(title,"").Trim(), t.CreatedAt, GetImageSrcFrom(t), title,t.DirectLink);
+        return new ShortArticle(System.Net.WebUtility.HtmlDecode(t.FullText.Replace(title,"").Trim()), t.CreatedAt, GetImageSrcFrom(t), title,t.DirectLink);
     }
 
     private static string GetTitleFrom(TweetModel t)

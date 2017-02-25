@@ -22,7 +22,7 @@ public class FrontPageService : IFrontPageService
     {
         var threeAmigosHeaderArticles = await this.articlesQuery.GetThreeAmigos();
         var otherArticles = (await this.twitterQuery.GetTop10TweetsFrom()).Select(x=>x.ToShortArticle());
-        FrontPageModel model = new FrontPageModel(threeAmigosHeaderArticles.OrderBy(x => x.Position), otherArticles.OrderByDescending(x => x.CreatedAt));
+        FrontPageModel model = new FrontPageModel(threeAmigosHeaderArticles.OrderBy(x => x.Position), otherArticles.OrderByDescending(x => x.CreatedAt)); 
         return model;
     }
 }
