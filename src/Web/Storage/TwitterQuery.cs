@@ -20,6 +20,6 @@ public class TwitterQuery : ITwitterQuery
 
         var tweets = await tokens.Statuses.UserTimelineAsync(count => 10);
         
-        return tweets.Select(x => new TweetModel(x.Text, x.CreatedAt,x.Id));
+        return tweets.Select(x => new TweetModel(x.Text, x.CreatedAt,x.Id,this.settings.Twitter_ScreenName));
     }
 }
