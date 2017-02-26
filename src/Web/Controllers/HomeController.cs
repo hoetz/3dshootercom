@@ -18,5 +18,10 @@ namespace Web.Controllers
             var model = await this.service.GetFrontPageModelAsync();
             return View(model);
         }
+
+        public IActionResult Impressum()
+        {
+            return View();
+        }
     }
 }

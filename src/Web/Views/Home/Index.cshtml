@@ -5,20 +5,10 @@
 @inject UserManager<ApplicationUser> UserManager
 @model FrontPageModel
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>3DSHOOTER.COM</title>
-    <meta name="description" content="Ein Magazin für den mündigen Videospieler - bestens kompatibel mit den Teenagern der 90er Jahre">
-    <link href="dist/app/css/styles.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/x-icon" href="dist/app/images/favicon.png">
-</head>
 
-<body>
     <div class="headerArticles">
         <section class="grid">
              
@@ -71,13 +61,16 @@
             <div class="logoRowItem">
                 <a href="https://twitter.com/3dshootercom" target="blank">Twitter</a>
             </div>
+            <div class="logoRowItem">
+                <a href="Home/Impressum">Impressum</a>
+            </div>
         </div>
           @foreach (var article in Model.OtherArticles)
           {
               <div class="articlesRow">
 
             <div class="articlePic" style="background-image: url('@article.ImageSrc');">
-                <div class="articlePicTitle"><a href="@article.DirectLink">@article.Title</a></div>
+                <div class="articlePicTitle"><a href="@article.DirectLink" target="blank">@article.Title</a></div>
             </div>
             <div class="articleText">
                 <p>@article.FullText</p>
@@ -103,6 +96,3 @@
 }
             </div>
     </div>
-</body>
-
-</html>

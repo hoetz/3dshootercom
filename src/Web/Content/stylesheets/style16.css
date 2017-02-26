@@ -112,15 +112,24 @@ a:hover {
     font-size: 1.5rem;
 }
 
-.articlePicTitle {
+div.articlePicTitle {
     width: 100%;
     background: rgba(202, 78, 78, 0.8);
     color: white;
 }
 
-.articlePicTitle a:link,a:visited {
-    color: white;
+div.articlePicTitle a:hover {
+  color: white;
 }
+
+div.articlePicTitle a:link {
+  color: white;
+}
+
+div.articlePicTitle a:visited {
+  color: white;
+}
+
 
 
 .articlesRow {
