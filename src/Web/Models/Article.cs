@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Web.Models;
 
 
@@ -11,6 +12,7 @@ public class Article: ValueObject<Article>
     
     public int Position { get; set; }
     public string Title { get; set; }
+    public string UrlTitle { get {return Regex.Replace(this.Title, "[^A-Za-z0-9]", "-");} }
     public string Content { get; set; }
     public string Author { get; set; }
     
