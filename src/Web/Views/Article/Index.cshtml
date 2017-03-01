@@ -1,31 +1,8 @@
-@using System.Linq
-@model ArticleViewModel
+@model dynamic
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>3DSHOOTER.COM - @Model.Title</title>
-    <meta name="description" content="@Model.Abstract">
-    <link href="/dist/app/css/styles.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/x-icon" href="/dist/app/images/favicon.png">
-      <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-50278600-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-</head>
-
-<body>
-    
-    <div id="articleLogoRowWrapper">
+<div id="articleLogoRowWrapper">
         <div id="articleLogoRow">
             <div class="logo">
                 <a href="http://www.3dshooter.com"><svg width="100" height="37">
@@ -40,23 +17,17 @@
             </div>
         </div>
     </div>
-    
-    <article id="articleMain">
-        <div id="articleBackOverlay" style='background-image:url("@Model.HeaderImageSrc")'></div>
-        <section id="articleMainHeader">
-        <header>
-            <h1>@Model.Title</h1>
-            <h2>von @Model.Author, @Model.Date</h2>
-        </header>
-         </section>
-         <section id="article-body">
-             @Html.Raw(Model.Content)
-         </section>
-       
-    </article>
-    <div class="footerArticle">
+<div id="main">
+    <h1>Alle Artikel</h1>
+    <ul>
+    @foreach (var article in Model.Articles)
+    {
+        <li>
+            <a href="/artikel/@article.Id/@article.UrlTitle">@article.Title</a> - @article.Date
+        </li>
+    }
+    </ul>
+</div>
+ <div class="footerArticle">
             <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing Mail: <a href="mailto:flo@3dshooter.com">flo@3dshooter.com</a> Twitter:<a href="https://twitter.com/3dshootercom">@@3dshootercom</a></p>
             </div>
-</body>
-
-</html>

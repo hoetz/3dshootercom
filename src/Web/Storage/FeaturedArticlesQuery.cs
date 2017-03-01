@@ -41,6 +41,24 @@ public class AzureArticleQuery : IAzureArticleQuery
             throw new ArgumentException("No article found for {id}");
           
     }
+
+    
+    public async Task<IEnumerable<Article>> GetArchiveList()
+    {
+        var myQuery =
+                new TableQuery();
+
+        var table = this.GetTableReference(this._CloudTableClient, this._TableName);
+        TableQuerySegment querySegment = null;
+        var returnList = new List<DynamicTableEntity>();
+        while (querySegment == null || querySegment.ContinuationToken != null)
+        {
+            querySegment = await table.ExecuteQuerySegmentedAsync(myQuery, querySegment != null ?
+                                             querySegment.ContinuationToken : null);
+            returnList.AddRange(querySegment);
+        }
+        return returnList.Select(FeaturedArticlesQuery.ToDomainArticle);
+    }
     
     private CloudTable GetTableReference(CloudTableClient client, string TableName)
     {
@@ -62,6 +80,7 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
         this._CloudTableClient = storageAccount.CreateCloudTableClient();
         this._TableName = "shooterArticles";
     }
+
 
     public async Task<IEnumerable<Article>> GetThreeAmigos()
     {
@@ -112,7 +131,7 @@ public class FeaturedArticlesQuery : IFeaturedArticlesQuery
                     e.Properties["image"].StringValue,
                     e.Properties["Datum"].StringValue,
                     e.Properties["pos"].Int32Value.Value,
-                    e.Properties.ContainsKey("content")?e.Properties["content"].StringValue:"",
+                    e.Properties.ContainsKey("content")?e.Properties["content"].StringValue:e.Properties["text"].StringValue,
                     e.Properties.ContainsKey("author")?e.Properties["author"].StringValue:"");
     }
 

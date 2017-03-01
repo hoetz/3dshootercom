@@ -6,6 +6,8 @@ namespace Web.Domain
     public interface IAzureArticleQuery
     {
         Task<Article> GetBy(int id);
+        Task<IEnumerable<Article>> GetArchiveList();
+        
     }
     public interface IFeaturedArticlesQuery
     {
