@@ -16,7 +16,7 @@ namespace Web.Controllers
         {
             var articles = (await this.service.GetAllForArchiveList())
                 .Where(x=>string.IsNullOrEmpty(x.Text)==false)
-                .OrderByDescending(x=>DateTime.Parse(x.Date));
+                .OrderByDescending(x=>DateTime.Parse(x.Date,new System.Globalization.CultureInfo("de-DE")));
             return View(new ArticleArchiveModel(articles));
         }
     }
