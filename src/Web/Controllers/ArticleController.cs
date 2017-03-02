@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Linq;
-using System;
 
 namespace Web.Controllers
 {
@@ -22,13 +20,7 @@ namespace Web.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> list()
-        {
-            var articles = (await this.service.GetAllForArchiveList())
-                .Where(x=>string.IsNullOrEmpty(x.Text)==false)
-                .OrderByDescending(x=>DateTime.Parse(x.Date));
-            return View(new ArticleArchiveModel(articles));
-        }
+        
     }
 
     public class ArticleArchiveModel

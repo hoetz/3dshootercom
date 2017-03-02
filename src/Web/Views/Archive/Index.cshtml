@@ -1,0 +1,20 @@
+@using Web.Controllers
+@model ArticleArchiveModel
+@{
+    Layout = "_Layout";
+}
+@Html.Partial("../Shared/_SlimHeader.cshtml")
+<div id="main">
+    <h1>Alle Artikel</h1>
+    <ul>
+    @foreach (var article in Model.Articles)
+    {
+        <li>
+            <a href="/artikel/@article.Id/@article.UrlTitle">@article.Title</a> - @article.Date
+        </li>
+    }
+    </ul>
+</div>
+ <div class="footerArticle">
+            <p>Copyright 1998 - 2016 F. Hötzinger Klingerfeldstr. 2a 94550 Künzing Mail: <a href="mailto:flo@3dshooter.com">flo@3dshooter.com</a> Twitter:<a href="https://twitter.com/3dshootercom">@@3dshootercom</a></p>
+            </div>
