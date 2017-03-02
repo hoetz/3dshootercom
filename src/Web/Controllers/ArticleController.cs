@@ -25,13 +25,11 @@ namespace Web.Controllers
 
     public class ArticleArchiveModel
     {
-        private IEnumerable<Article> articles;
-
         public ArticleArchiveModel(IEnumerable<Article> articles)
         {
             this.Articles = articles;
         }
 
-        public IEnumerable<Article> Articles { get => articles; set => articles = value; }
+        public IEnumerable<Article> Articles { get; set; }
     }
 }
