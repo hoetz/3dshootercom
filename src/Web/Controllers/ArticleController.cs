@@ -22,7 +22,7 @@ namespace Web.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> list()
         {
             var articles = (await this.service.GetAllForArchiveList())
                 .Where(x=>string.IsNullOrEmpty(x.Text)==false)
