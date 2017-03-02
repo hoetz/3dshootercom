@@ -22,7 +22,6 @@ namespace Web.Controllers
             return View(model);
         }
 
-        [Route("artikel/index")]
         public async Task<IActionResult> Index()
         {
             var articles = (await this.service.GetAllForArchiveList())
@@ -44,4 +43,3 @@ namespace Web.Controllers
         public IEnumerable<Article> Articles { get => articles; set => articles = value; }
     }
 }
-
