@@ -282,6 +282,10 @@ div.articlePicTitle a:visited {
     height: 100%;
 }
 
+.slot {
+    color:#F1E9E9;
+}
+
 @media only screen and (min-width: 150px) and (max-width: 959px) {
     #articleMain {
         width: 100%;

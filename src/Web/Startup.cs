@@ -41,6 +41,7 @@ namespace Web
             services.AddOptions();
 
             services.Configure<TwitterSettings>(options => Configuration.GetSection("Twitter").Bind(options));
+            services.Configure<DeploymentSlot>(options=> Configuration.GetSection("DeploymentSlot").Bind(options));
 
             services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));

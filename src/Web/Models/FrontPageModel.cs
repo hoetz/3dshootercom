@@ -6,6 +6,8 @@ public class FrontPageModel
 {
     public IEnumerable<Article> ThreeAmigos { get; set; }
     public IEnumerable<ShortArticle> OtherArticles { get; set; }
+
+    public string DeploymentSlot { get; set; }
     
     public Article NumberOne
     {
@@ -22,9 +24,10 @@ public class FrontPageModel
         get{ return ThreeAmigos.Count()>2?ThreeAmigos.Skip(2).Take(1).First():Article.EMPTY;}
     }
     
-    public FrontPageModel(IEnumerable<Article> threeAmigosArticles,IEnumerable<ShortArticle> otherArticles)
+    public FrontPageModel(IEnumerable<Article> threeAmigosArticles,IEnumerable<ShortArticle> otherArticles, string deploymentSlotName)
     {
         this.ThreeAmigos=threeAmigosArticles;
         this.OtherArticles=otherArticles;
+        this.DeploymentSlot=deploymentSlotName;
     }
 }
