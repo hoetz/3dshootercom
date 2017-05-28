@@ -1,4 +1,6 @@
-FROM microsoft/aspnetcore:1.1
+FROM microsoft/aspnetcore-build
 WORKDIR /app
-COPY published ./
-ENTRYPOINT ["dotnet", "Web.dll"]
+COPY *.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish --output /out/ --configuration Release
