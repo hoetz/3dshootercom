@@ -2,6 +2,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.ApplicationInsights.AspNetCore;
 
 namespace Web
 {
@@ -14,6 +15,8 @@ namespace Web
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseApplicationInsights()
+                
 #if DEBUG
         .UseEnvironment("Development") 
 #endif
