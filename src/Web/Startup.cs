@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using Web.Domain;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
 
 namespace Web
 {
@@ -41,7 +42,7 @@ namespace Web
             services.AddOptions();
 
             services.Configure<TwitterSettings>(options => Configuration.GetSection("Twitter").Bind(options));
-            services.Configure<DeploymentSlot>(options=> Configuration.GetSection("DeploymentSlot").Bind(options));
+            services.Configure<DeploymentSlot>(options => Configuration.GetSection("DeploymentSlot").Bind(options));
 
             services.AddScoped<IFeaturedArticlesQuery>((x)
                   => new FeaturedArticlesQuery(Configuration.GetSection("AzureConString").Value));
@@ -59,14 +60,16 @@ namespace Web
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
-                options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
-                options.Cookies.ApplicationCookie.CookieName = "Interop";
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-
-
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/Account/LogIn");
+            services.AddAuthentication().AddTwitter(op =>
+            {
+                op.ConsumerKey = "ehWKBer0gENGJka9T5UMHHkED";
+                op.ConsumerSecret = "l95fNu1ClgngGiLWy4qLmI7g0jiRiQ3hZAj5vl1W0wzL1SfPPy";
+            });
 
             services.AddMvc();
         }
@@ -92,11 +95,7 @@ namespace Web
             app.UseStaticFiles();
 
             // Add cookie-based authentication to the request pipeline.
-            app.UseIdentity().UseTwitterAuthentication(new TwitterOptions
-            {
-                ConsumerKey = "ehWKBer0gENGJka9T5UMHHkED",
-                ConsumerSecret = "l95fNu1ClgngGiLWy4qLmI7g0jiRiQ3hZAj5vl1W0wzL1SfPPy"
-            });
+            app.UseAuthentication();
 
 
 
