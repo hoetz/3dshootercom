@@ -1,5 +1,5 @@
 # 3dshooter.com
-This is the source code of www.3dshooter.com which is primarily a testbed for ASP.NET 5.
+This is the source code of www.3dshooter.com which is primarily a testbed for ASP.NET Core.
 
 Technology used:
 * ASP.NET Core
