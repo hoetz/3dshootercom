@@ -19,6 +19,11 @@ namespace Web.Controllers
             return View(model);
         }
 
+        public IActionResult Error()
+        {
+            return View();
+        }
+
         public IActionResult Impressum()
         {
             return View();

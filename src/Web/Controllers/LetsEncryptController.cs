@@ -18,7 +18,7 @@ public class LetsEncryptController : Controller
         Response.ContentType = "text/plain";
         var content = string.Empty;
         var path = Env.WebRootPath;
-        var fullPath = Path.Combine(path, @".well-known\acme-challenge");
+        var fullPath = Path.Combine(path, $".well-known{Path.DirectorySeparatorChar}acme-challenge");
         var dirInfo = new DirectoryInfo(fullPath);
         var files = dirInfo.GetFiles();
         foreach (var fileInfo in files)
