@@ -92,11 +92,38 @@ namespace Web
                 // Add Error handling middleware which catches all application specific errors and
                 // send the request to the following path or controller action.
                 app.UseExceptionHandler("/Home/Error");
-
+                
                 app.UseHttpsRedirection();
+
+                //redirect non-www to www
+                app.Use((context, next) =>
+                {
+                    var request = context.Request;
+                    var host = request.Host;
+                    if (host.Host.Equals("3dshooter.com", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HostString newHost;
+                        if (host.Port.HasValue)
+                        {
+                            newHost = new HostString("www.3dshooter.com", host.Port.Value);
+                        }
+                        else
+                        {
+                            newHost = new HostString("www.3dshooter.com");
+                        }
+                        var myUri = new Uri(UriHelper.BuildAbsolute(request.Scheme, newHost, request.PathBase, request.Path, request.QueryString));
+
+                        context.Response.Redirect(
+                            UriHelper.Encode(myUri));
+                        return Task.FromResult(0);
+                    }
+                    return next();
+                });
+
+
             }
 
-            
+
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
