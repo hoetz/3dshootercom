@@ -17,3 +17,4 @@ Properties
 .vscode
 src/Web/Web.userprefs
 published
+.well-known/
