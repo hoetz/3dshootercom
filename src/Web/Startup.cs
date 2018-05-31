@@ -9,6 +9,9 @@ using System;
 using Web.Domain;
 using System.IO;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
+using System.Threading.Tasks;
 
 namespace Web
 {
@@ -89,15 +92,41 @@ namespace Web
                 // Add Error handling middleware which catches all application specific errors and
                 // send the request to the following path or controller action.
                 app.UseExceptionHandler("/Home/Error");
+
+                app.UseHttpsRedirection();
+                
+                //redirect non-www to www
+                app.Use((context, next) =>
+                {
+                    var request = context.Request;
+                    var host = request.Host;
+                    if (host.Host.Equals("3dshooter.com", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HostString newHost;
+                        if (host.Port.HasValue)
+                        {
+                            newHost = new HostString("www.3dshooter.com", host.Port.Value);
+                        }
+                        else
+                        {
+                            newHost = new HostString("www.3dshooter.com");
+                        }
+                        context.Response.Redirect(UriHelper.Encode(
+                                                        new Uri($"{request.Scheme}{newHost}{request.PathBase}{request.Path}{request.QueryString}")));
+                        return Task.FromResult(0);
+                    }
+                    return next();
+                });
+
             }
+
+            
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
 
             // Add cookie-based authentication to the request pipeline.
             app.UseAuthentication();
-
-
 
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
