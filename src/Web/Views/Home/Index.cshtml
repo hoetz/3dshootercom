@@ -83,7 +83,7 @@
         
         <div class="footer">
             <p>Copyright 1998 - @System.DateTime.Now.Year F. Hötzinger Klingerfeldstr. 2a 94550 Künzing Mail: <a href="mailto:flo@3dshooter.com">flo@3dshooter.com</a> Twitter:<a href="https://twitter.com/3dshootercom">@@3dshootercom</a>
-            </br> <span class="slot">@Model.DeploymentSlot</span>
+            </br> <span class="slot">@Model.DeploymentSlot - @System.Reflection.Assembly.GetExecutingAssembly().GetName().Version</span>
             </p>
             @if (SignInManager.IsSignedIn(User))
 {
